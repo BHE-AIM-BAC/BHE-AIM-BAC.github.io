@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - BHE-AIM-BAC</title>
+
+    <!-- 網站圖示 -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🧠</text></svg>">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans antialiased flex flex-col min-h-screen">
+
+    <!-- 導航列 (與主頁保持一致，反白當前頁面) -->
+    <header class="bg-white shadow-md fixed w-full z-50 top-0">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- 實驗室標誌 / 名稱 -->
+                <div class="flex-shrink-0 flex items-center">
+                    <i class="fa-solid fa-brain text-blue-600 text-2xl mr-2"></i>
+                    <a href="index.html" class="text-xl font-bold text-gray-900">BHE-AIM-BAC</a>
+                </div>
+
+                <!-- 桌面端選單 -->
+                <nav class="hidden md:flex space-x-8">
+                    <a href="index.html" class="text-gray-600 hover:text-blue-600 transition duration-300">Home</a>
+                    <a href="research.html" class="text-gray-600 hover:text-blue-600 transition duration-300">Research</a>
+                    <a href="publications.html" class="text-gray-600 hover:text-blue-600 transition duration-300">Publications</a>
+                    <a href="team.html" class="text-gray-600 hover:text-blue-600 transition duration-300">Team</a>
+                    <a href="contact.html" class="text-blue-600 font-bold border-b-2 border-blue-600 pb-1">Contact us</a>
+                </nav>
+
+                <!-- 行動端選單按鈕 -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-gray-600 hover:text-gray-900 focus:outline-none">
+                        <i class="fa-solid fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- 行動端下拉選單 -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="index.html" class="block px-3 py-2 text-gray-600 hover:text-blue-600 hover:bg-gray-50 rounded-md">Home</a>
+                <a href="research.html" class="block px-3 py-2 text-gray-600 hover:text-blue-600 hover:bg-gray-50 rounded-md">Research</a>
+                <a href="publications.html" class="block px-3 py-2 text-gray-600 hover:text-blue-600 hover:bg-gray-50 rounded-md">Publications</a>
+                <a href="team.html" class="block px-3 py-2 text-gray-600 hover:text-blue-600 hover:bg-gray-50 rounded-md">Team</a>
+                <a href="contact.html" class="block px-3 py-2 text-blue-600 bg-blue-50 font-bold rounded-md">Contact us</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- 主要內容 -->
+    <main class="pt-32 pb-12 flex-grow flex items-center justify-center">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl">
+            <div class="bg-white p-8 md:p-12 rounded-2xl shadow-sm border border-gray-100 text-center">
+                <h1 class="text-3xl md:text-4xl font-extrabold text-gray-900 mb-6">Get in Touch</h1>
+                <p class="text-gray-600 mb-10 max-w-xl mx-auto">
+                    We are always looking for passionate students and researchers to join our lab. Please feel free to reach out to us using the contact information below.
+                </p>
+
+                <div class="space-y-8 text-left inline-block">
+                    <!-- 地址 -->
+                    <div class="flex items-start">
+                        <div class="bg-blue-50 p-3 rounded-full mr-4 flex-shrink-0">
+                            <i class="fa-solid fa-location-dot text-blue-600 text-xl w-6 text-center"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-gray-900 text-lg mb-1">Address</h3>
+                            <p class="text-gray-600 leading-relaxed">
+                                Room 501, Computer Science Building<br>
+                                XXX University, City, Country
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- 電子信箱 -->
+                    <div class="flex items-start">
+                        <div class="bg-blue-50 p-3 rounded-full mr-4 flex-shrink-0">
+                            <i class="fa-solid fa-envelope text-blue-600 text-xl w-6 text-center"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-gray-900 text-lg mb-1">Email</h3>
+                            <a href="mailto:ibcc-lab@university.edu.cn" class="text-blue-600 hover:underline hover:text-blue-800 transition">
+                                ibcc-lab@university.edu.cn
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- 電話 (可選) -->
+                    <div class="flex items-start">
+                        <div class="bg-blue-50 p-3 rounded-full mr-4 flex-shrink-0">
+                            <i class="fa-solid fa-phone text-blue-600 text-xl w-6 text-center"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-gray-900 text-lg mb-1">Phone</h3>
+                            <p class="text-gray-600">+86 (123) 4567-8900</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- 頁腳 -->
+    <footer class="bg-gray-900 text-gray-400 py-8 mt-auto">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center text-sm">
+            <div class="mb-4 md:mb-0">
+                &copy; 2026 BHE-AIM-BAC Lab. All rights reserved.
+            </div>
+            <div class="flex space-x-4">
+                <a href="#" class="hover:text-white transition"><i class="fa-brands fa-github text-xl"></i></a>
+                <a href="#" class="hover:text-white transition"><i class="fa-brands fa-twitter text-xl"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 行動端選單腳本 -->
+    <script>
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+
+        const mobileLinks = menu.querySelectorAll('a');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                menu.classList.add('hidden');
+            });
+        });
+    </script>
+</body>
+</html>

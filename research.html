@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>研究方向 - BHE-AIM-BAC</title>
+
+    <!-- 添加浏览器标签页图标 (Favicon) -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🧠</text></svg>">
+
+    <!-- 引入 Tailwind CSS 用于快速美化网页 -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- 引入 FontAwesome 图标库 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* 添加平滑滚动效果 */
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans antialiased">
+
+    <!-- 导航栏 (与主页保持一致，但高亮当前页) -->
+    <header class="bg-white shadow-md fixed w-full z-50 top-0">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- 实验室 Logo / 名称 -->
+                <div class="flex-shrink-0 flex items-center">
+                    <i class="fa-solid fa-brain text-blue-600 text-2xl mr-2"></i>
+                    <a href="index.html" class="text-xl font-bold text-gray-900">BHE-AIM-BAC</a>
+                </div>
+
+                <!-- 桌面端菜单 -->
+                <nav class="hidden md:flex space-x-8">
+                    <a href="index.html" class="text-gray-600 hover:text-blue-600 transition duration-300">Home</a>
+                    <a href="research.html" class="text-blue-600 font-bold border-b-2 border-blue-600 pb-1">Research</a>
+                    <a href="publications.html" class="text-gray-600 hover:text-blue-600 transition duration-300">Publications</a>
+                    <a href="team.html" class="text-gray-600 hover:text-blue-600 transition duration-300">Team</a>
+                    <a href="contact.html" class="text-gray-600 hover:text-blue-600 transition duration-300">Contact us</a>
+                </nav>
+
+                <!-- 移动端菜单按钮 -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-gray-600 hover:text-gray-900 focus:outline-none">
+                        <i class="fa-solid fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- 移动端下拉菜单 -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="index.html" class="block px-3 py-2 text-gray-600 hover:text-blue-600 hover:bg-gray-50 rounded-md">Home</a>
+                <a href="research.html" class="block px-3 py-2 text-blue-600 bg-blue-50 font-bold rounded-md">Research</a>
+                <a href="publications.html" class="block px-3 py-2 text-gray-600 hover:text-blue-600 hover:bg-gray-50 rounded-md">Publications</a>
+                <a href="team.html" class="block px-3 py-2 text-gray-600 hover:text-blue-600 hover:bg-gray-50 rounded-md">Team</a>
+                <a href="contact.html" class="block px-3 py-2 text-gray-600 hover:text-blue-600 hover:bg-gray-50 rounded-md">Contact us</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- 页面标题横幅 -->
+    <div class="pt-24 pb-10 bg-blue-600 text-white text-center">
+        <h1 class="text-4xl font-extrabold mb-4">研究方向与内容</h1>
+        <p class="text-lg text-blue-100 max-w-2xl mx-auto px-4">
+            立足于交叉学科前沿，致力于在脑机接口、类脑计算与医学人工智能领域取得突破性进展。
+        </p>
+    </div>
+
+    <!-- 研究方向主体内容 -->
+    <main class="py-12">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl">
+
+            <!-- 核心研究方向列表 -->
+            <div class="space-y-16 mb-20">
+
+                <!-- 方向一：图文混排 (图在左，文在右) -->
+                <div class="flex flex-col md:flex-row bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-lg transition duration-300">
+                    <div class="md:w-5/12">
+                        <img src="https://images.unsplash.com/photo-1559757175-5700dde675bc?auto=format&fit=crop&q=80&w=800" alt="脑电信号采集与分析" class="w-full h-64 md:h-full object-cover">
+                    </div>
+                    <div class="md:w-7/12 p-8 flex flex-col justify-center">
+                        <div class="flex items-center mb-4">
+                            <i class="fa-solid fa-wave-square text-blue-600 text-2xl mr-3"></i>
+                            <h2 class="text-2xl font-bold text-gray-900">脑电图 (EEG) 与脑机接口 (BCI)</h2>
+                        </div>
+                        <p class="text-gray-600 leading-relaxed mb-6">
+                            基于高分辨率的非侵入式脑电信号采集设备，研究在复杂动态环境下的脑信号解码技术。我们特别关注如何利用深度学习算法，实现对抑郁症、焦虑症、疲劳状态等情绪与认知障碍的客观生理指标检测、早期预警与闭环神经干预。
+                        </p>
+                        <div class="mb-2">
+                            <h4 class="font-bold text-gray-800 text-sm mb-2">核心技术：</h4>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="bg-gray-100 text-gray-700 text-xs px-3 py-1 rounded-full">时空特征提取</span>
+                                <span class="bg-gray-100 text-gray-700 text-xs px-3 py-1 rounded-full">自适应信号去噪</span>
+                                <span class="bg-gray-100 text-gray-700 text-xs px-3 py-1 rounded-full">脑电大模型</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 方向二：图文混排 (文在左，图在右) -->
+                <div class="flex flex-col md:flex-row-reverse bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-lg transition duration-300">
+                    <div class="md:w-5/12">
+                        <img src="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&q=80&w=800" alt="类脑计算架构" class="w-full h-64 md:h-full object-cover">
+                    </div>
+                    <div class="md:w-7/12 p-8 flex flex-col justify-center">
+                        <div class="flex items-center mb-4">
+                            <i class="fa-solid fa-microchip text-blue-600 text-2xl mr-3"></i>
+                            <h2 class="text-2xl font-bold text-gray-900">脉冲神经网络 (SNNs) 与类脑计算</h2>
+                        </div>
+                        <p class="text-gray-600 leading-relaxed mb-6">
+                            模拟生物神经元高度稀疏、事件驱动的脉冲发放机制，研发具有极低功耗、高计算效率的第三代人工神经网络。我们的研究旨在解决 SNN 的时空信度分配问题，并探索基于神经形态芯片的硬件加速方案，推动人工智能向真正的类脑智能迈进。
+                        </p>
+                        <div class="mb-2">
+                            <h4 class="font-bold text-gray-800 text-sm mb-2">核心技术：</h4>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="bg-gray-100 text-gray-700 text-xs px-3 py-1 rounded-full">替代梯度下降</span>
+                                <span class="bg-gray-100 text-gray-700 text-xs px-3 py-1 rounded-full">突触可塑性 (STDP)</span>
+                                <span class="bg-gray-100 text-gray-700 text-xs px-3 py-1 rounded-full">边缘端部署</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 方向三：图文混排 (图在左，文在右) -->
+                <div class="flex flex-col md:flex-row bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-lg transition duration-300">
+                    <div class="md:w-5/12">
+                        <img src="https://images.unsplash.com/photo-1576091160550-2173ff9e5ee5?auto=format&fit=crop&q=80&w=800" alt="医疗数据分析" class="w-full h-64 md:h-full object-cover">
+                    </div>
+                    <div class="md:w-7/12 p-8 flex flex-col justify-center">
+                        <div class="flex items-center mb-4">
+                            <i class="fa-solid fa-stethoscope text-blue-600 text-2xl mr-3"></i>
+                            <h2 class="text-2xl font-bold text-gray-900">医学人工智能与辅助诊断</h2>
+                        </div>
+                        <p class="text-gray-600 leading-relaxed mb-6">
+                            利用先进的机器学习和计算机视觉技术，深度挖掘临床医学数据（包含医学影像如 MRI、CT，以及多模态生理信号）的隐含规律。我们致力于开发高鲁棒性、高可解释性的计算机辅助诊断 (CAD) 系统，助力医生进行疾病的精准筛查。
+                        </p>
+                        <div class="mb-2">
+                            <h4 class="font-bold text-gray-800 text-sm mb-2">核心技术：</h4>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="bg-gray-100 text-gray-700 text-xs px-3 py-1 rounded-full">多模态特征融合</span>
+                                <span class="bg-gray-100 text-gray-700 text-xs px-3 py-1 rounded-full">可解释性人工智能 (XAI)</span>
+                                <span class="bg-gray-100 text-gray-700 text-xs px-3 py-1 rounded-full">医学图像分割</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- 承担的科研项目 (Research Projects) -->
+            <section>
+                <div class="text-center mb-10">
+                    <h2 class="text-3xl font-extrabold text-gray-900 inline-block relative">
+                        承担科研项目
+                        <div class="absolute w-1/2 h-1 bg-blue-600 bottom-0 left-1/4 -mb-3 rounded"></div>
+                    </h2>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <!-- 项目卡片 1 -->
+                    <div class="bg-white p-6 rounded-xl shadow-sm border border-l-4 border-l-blue-600 hover:shadow-md transition">
+                        <div class="flex justify-between items-start mb-2">
+                            <h4 class="font-bold text-gray-900 text-lg">国家自然科学基金重点项目</h4>
+                            <span class="bg-green-100 text-green-700 text-xs font-bold px-2 py-1 rounded">在研</span>
+                        </div>
+                        <p class="text-blue-600 text-sm font-medium mb-3">面向多模态脑电信号的类脑智能计算理论与方法</p>
+                        <p class="text-gray-500 text-xs"><i class="fa-regular fa-clock mr-1"></i> 项目周期: 2024.01 - 2027.12</p>
+                    </div>
+
+                    <!-- 项目卡片 2 -->
+                    <div class="bg-white p-6 rounded-xl shadow-sm border border-l-4 border-l-blue-600 hover:shadow-md transition">
+                        <div class="flex justify-between items-start mb-2">
+                            <h4 class="font-bold text-gray-900 text-lg">国家自然科学基金青年项目</h4>
+                            <span class="bg-green-100 text-green-700 text-xs font-bold px-2 py-1 rounded">在研</span>
+                        </div>
+                        <p class="text-blue-600 text-sm font-medium mb-3">基于脉冲神经网络的时空特征提取及其在情感识别中的应用</p>
+                        <p class="text-gray-500 text-xs"><i class="fa-regular fa-clock mr-1"></i> 项目周期: 2023.01 - 2025.12</p>
+                    </div>
+
+                    <!-- 项目卡片 3 -->
+                    <div class="bg-white p-6 rounded-xl shadow-sm border border-l-4 border-l-gray-400 hover:shadow-md transition opacity-80">
+                        <div class="flex justify-between items-start mb-2">
+                            <h4 class="font-bold text-gray-900 text-lg">省部级重点研发计划</h4>
+                            <span class="bg-gray-200 text-gray-700 text-xs font-bold px-2 py-1 rounded">已结题</span>
+                        </div>
+                        <p class="text-gray-600 text-sm font-medium mb-3">抑郁症早期筛查的智能辅助诊断系统研发</p>
+                        <p class="text-gray-500 text-xs"><i class="fa-regular fa-clock mr-1"></i> 项目周期: 2020.01 - 2022.12</p>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <!-- 加入我们 CTA -->
+    <section class="py-12 bg-blue-50 mt-12">
+        <div class="container mx-auto px-4 text-center">
+            <h3 class="text-2xl font-bold text-gray-900 mb-4">对我们的研究感兴趣？</h3>
+            <p class="text-gray-600 mb-6 max-w-2xl mx-auto">我们期待具有探索精神的你加入团队，一起在人工智能与脑科学的交叉领域创造更多可能。</p>
+            <a href="contact.html" class="inline-block bg-blue-600 text-white px-8 py-3 rounded-md font-bold hover:bg-blue-700 transition shadow-md">加入实验室</a>
+        </div>
+    </section>
+
+    <!-- 页脚 (与主页保持一致) -->
+    <footer class="bg-gray-900 text-gray-400 py-8">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center text-sm">
+            <div class="mb-4 md:mb-0">
+                &copy; 2026 智能脑认知与计算实验室 (IBCC Lab). 保留所有权利.
+            </div>
+            <div class="flex space-x-4">
+                <a href="#" class="hover:text-white transition"><i class="fa-brands fa-github text-xl"></i></a>
+                <a href="#" class="hover:text-white transition"><i class="fa-brands fa-twitter text-xl"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript 用于移动端菜单交互 -->
+    <script>
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+
+        const mobileLinks = menu.querySelectorAll('a');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                menu.classList.add('hidden');
+            });
+        });
+    </script>
+</body>
+</html>
