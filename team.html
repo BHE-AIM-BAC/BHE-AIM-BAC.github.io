@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>团队成员 - BHE-AIM-BAC</title>
+    
+    <!-- 添加浏览器标签页图标 (Favicon) -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🧠</text></svg>">
+
+    <!-- 引入 Tailwind CSS 用于快速美化网页 -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- 引入 FontAwesome 图标库 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* 添加平滑滚动效果 */
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans antialiased">
+
+    <!-- 导航栏 (与主页保持绝对一致) -->
+    <header class="bg-white shadow-md fixed w-full z-50 top-0">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- 实验室 Logo / 名称 -->
+                <div class="flex-shrink-0 flex items-center">
+                    <i class="fa-solid fa-brain text-blue-600 text-2xl mr-2"></i>
+                    <a href="index.html" class="text-xl font-bold text-gray-900">AIM-BHE</a>
+                </div>
+                
+                <!-- 桌面端菜单 -->
+                <nav class="hidden md:flex space-x-8">
+                    <a href="index.html" class="text-gray-600 hover:text-blue-600 transition duration-300">首页</a>
+                    <a href="research.html" class="text-gray-600 hover:text-blue-600 transition duration-300">研究方向</a>
+                    <a href="publications.html" class="text-gray-600 hover:text-blue-600 transition duration-300">学术成果</a>
+                    <a href="team.html" class="text-blue-600 font-bold border-b-2 border-blue-600 pb-1">团队成员</a>
+                    <a href="contact.html" class="text-gray-600 hover:text-blue-600 transition duration-300">联系我们</a>
+                </nav>
+
+                <!-- 移动端菜单按钮 -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-gray-600 hover:text-gray-900 focus:outline-none">
+                        <i class="fa-solid fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- 移动端下拉菜单 -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="index.html" class="block px-3 py-2 text-gray-600 hover:text-blue-600 hover:bg-gray-50 rounded-md">首页</a>
+                <a href="research.html" class="block px-3 py-2 text-gray-600 hover:text-blue-600 hover:bg-gray-50 rounded-md">研究方向</a>
+                <a href="publications.html" class="block px-3 py-2 text-gray-600 hover:text-blue-600 hover:bg-gray-50 rounded-md">学术成果</a>
+                <a href="team.html" class="block px-3 py-2 text-blue-600 bg-blue-50 font-bold rounded-md">团队成员</a>
+                <a href="contact.html" class="block px-3 py-2 text-gray-600 hover:text-blue-600 hover:bg-gray-50 rounded-md">联系我们</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- 页面标题横幅 -->
+    <div class="pt-24 pb-10 bg-blue-600 text-white text-center">
+        <h1 class="text-4xl font-extrabold mb-4">我们的团队</h1>
+        <p class="text-lg text-blue-100 max-w-2xl mx-auto px-4">
+            汇聚计算机、神经科学与生物医学工程的跨学科创新力量，共同探索人类认知的奥秘。
+        </p>
+    </div>
+
+    <!-- 团队成员主体内容 -->
+    <main class="py-12">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl">
+            
+            <!-- 1. 实验室负责人 (PI) -->
+            <section class="mb-16">
+                <h2 class="text-2xl font-bold text-gray-800 mb-8 border-l-4 border-blue-600 pl-4">实验室负责人 (Principal Investigator)</h2>
+                <div class="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden flex flex-col md:flex-row">
+                    <div class="md:w-1/3 bg-gray-100 flex justify-center items-center p-8">
+                        <img src="https://ui-avatars.com/api/?name=W+W&background=random&size=256" alt="王教授" class="w-48 h-48 rounded-full shadow-md border-4 border-white object-cover">
+                    </div>
+                    <div class="md:w-2/3 p-8">
+                        <h3 class="text-3xl font-bold text-gray-900 mb-2">王五 教授</h3>
+                        <p class="text-blue-600 font-medium mb-4">博士生导师 / 某某大学计算机学院</p>
+                        
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="bg-blue-50 text-blue-700 text-xs px-3 py-1 rounded-full font-medium">类脑计算</span>
+                            <span class="bg-blue-50 text-blue-700 text-xs px-3 py-1 rounded-full font-medium">计算神经科学</span>
+                            <span class="bg-blue-50 text-blue-700 text-xs px-3 py-1 rounded-full font-medium">脑机接口</span>
+                        </div>
+
+                        <p class="text-gray-600 leading-relaxed mb-6">
+                            王五教授于某某大学获得计算机科学博士学位，随后在海外顶尖实验室从事博士后研究。主要从事类脑计算、计算神经科学、机器学习等方面的交叉研究。在 Nature Communications, IEEE TNNLS 等国际顶级期刊和会议上发表论文 50 余篇，主持多项国家级科研项目。
+                        </p>
+                        
+                        <div class="flex items-center space-x-4">
+                            <a href="mailto:prof.wang@university.edu" class="text-gray-500 hover:text-blue-600 transition flex items-center">
+                                <i class="fa-regular fa-envelope mr-2"></i> prof.wang@university.edu
+                            </a>
+                            <a href="#" class="text-gray-500 hover:text-blue-600 transition flex items-center">
+                                <i class="fa-solid fa-link mr-2"></i> 个人主页
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 2. 博士后与研究员 -->
+            <section class="mb-16">
+                <h2 class="text-2xl font-bold text-gray-800 mb-8 border-l-4 border-blue-600 pl-4">博士后 / 助理研究员</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <!-- 研究员 1 -->
+                    <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 flex items-center space-x-4 hover:shadow-md transition">
+                        <img src="https://ui-avatars.com/api/?name=C+L&background=random" alt="陈立" class="w-16 h-16 rounded-full">
+                        <div>
+                            <h4 class="text-lg font-bold text-gray-900">陈立 博士</h4>
+                            <p class="text-sm text-blue-600 mb-1">博士后研究员</p>
+                            <p class="text-xs text-gray-500">研究方向：脉冲神经网络硬件加速</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 3. 博士研究生 -->
+            <section class="mb-16">
+                <h2 class="text-2xl font-bold text-gray-800 mb-8 border-l-4 border-blue-600 pl-4">博士研究生</h2>
+                <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
+                    
+                    <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 text-center hover:-translate-y-1 hover:shadow-lg transition duration-300">
+                        <img src="https://ui-avatars.com/api/?name=Z+S&background=random" alt="张三" class="w-24 h-24 mx-auto rounded-full mb-4 shadow-sm">
+                        <h4 class="font-bold text-gray-900 text-lg">张三</h4>
+                        <p class="text-xs text-gray-500 mb-2">2023级 博士生</p>
+                        <p class="text-xs text-gray-600 line-clamp-2">脑电信号解码与情感计算</p>
+                    </div>
+
+                    <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 text-center hover:-translate-y-1 hover:shadow-lg transition duration-300">
+                        <img src="https://ui-avatars.com/api/?name=L+X&background=random" alt="李雪" class="w-24 h-24 mx-auto rounded-full mb-4 shadow-sm">
+                        <h4 class="font-bold text-gray-900 text-lg">李雪</h4>
+                        <p class="text-xs text-gray-500 mb-2">2024级 博士生</p>
+                        <p class="text-xs text-gray-600 line-clamp-2">多模态认知模型构建</p>
+                    </div>
+
+                </div>
+            </section>
+
+            <!-- 4. 硕士研究生 -->
+            <section class="mb-16">
+                <h2 class="text-2xl font-bold text-gray-800 mb-8 border-l-4 border-blue-600 pl-4">硕士研究生</h2>
+                <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
+                    
+                    <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 text-center hover:-translate-y-1 hover:shadow-lg transition duration-300">
+                        <img src="https://ui-avatars.com/api/?name=W+X&background=random" alt="王晓明" class="w-20 h-20 mx-auto rounded-full mb-4 shadow-sm">
+                        <h4 class="font-bold text-gray-900">王晓明</h4>
+                        <p class="text-xs text-gray-500 mb-1">2024级 硕士生</p>
+                    </div>
+
+                    <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 text-center hover:-translate-y-1 hover:shadow-lg transition duration-300">
+                        <img src="https://ui-avatars.com/api/?name=Z+H&background=random" alt="赵海" class="w-20 h-20 mx-auto rounded-full mb-4 shadow-sm">
+                        <h4 class="font-bold text-gray-900">赵海</h4>
+                        <p class="text-xs text-gray-500 mb-1">2025级 硕士生</p>
+                    </div>
+                    
+                    <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 text-center hover:-translate-y-1 hover:shadow-lg transition duration-300">
+                        <img src="https://ui-avatars.com/api/?name=L+M&background=random" alt="刘梅" class="w-20 h-20 mx-auto rounded-full mb-4 shadow-sm">
+                        <h4 class="font-bold text-gray-900">刘梅</h4>
+                        <p class="text-xs text-gray-500 mb-1">2025级 硕士生</p>
+                    </div>
+
+                </div>
+            </section>
+
+            <!-- 5. 毕业校友 -->
+            <section>
+                <h2 class="text-2xl font-bold text-gray-800 mb-8 border-l-4 border-gray-400 pl-4">毕业校友</h2>
+                <div class="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden">
+                    <table class="w-full text-left border-collapse">
+                        <thead>
+                            <tr class="bg-gray-50 text-gray-600 text-sm uppercase tracking-wider">
+                                <th class="p-4 border-b">姓名</th>
+                                <th class="p-4 border-b">学位/届别</th>
+                                <th class="p-4 border-b hidden md:table-cell">研究课题</th>
+                                <th class="p-4 border-b">毕业去向</th>
+                            </tr>
+                        </thead>
+                        <tbody class="text-gray-700 text-sm">
+                            <tr class="hover:bg-gray-50 transition border-b border-gray-100">
+                                <td class="p-4 font-medium">孙志国</td>
+                                <td class="p-4">博士 (2024届)</td>
+                                <td class="p-4 hidden md:table-cell text-gray-500">基于脉冲神经网络的图像识别算法研究</td>
+                                <td class="p-4">某某科技大学 助理教授</td>
+                            </tr>
+                            <tr class="hover:bg-gray-50 transition border-b border-gray-100">
+                                <td class="p-4 font-medium">周梦</td>
+                                <td class="p-4">硕士 (2023届)</td>
+                                <td class="p-4 hidden md:table-cell text-gray-500">多通道脑电信号的特征提取</td>
+                                <td class="p-4">腾讯科技 (深圳)</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <!-- 加入我们 CTA -->
+    <section class="py-12 bg-blue-50">
+        <div class="container mx-auto px-4 text-center">
+            <h3 class="text-2xl font-bold text-gray-900 mb-4">想要加入我们吗？</h3>
+            <p class="text-gray-600 mb-6 max-w-2xl mx-auto">我们常年招收有激情的硕士生、博士生。如果你对类脑计算与人工智能感兴趣，欢迎联系我们。</p>
+            <a href="contact.html" class="inline-block bg-blue-600 text-white px-8 py-3 rounded-md font-bold hover:bg-blue-700 transition shadow-md">查看招生信息</a>
+        </div>
+    </section>
+
+    <!-- 页脚 (与主页保持绝对一致) -->
+    <footer class="bg-gray-900 text-gray-400 py-8">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center text-sm">
+            <div class="mb-4 md:mb-0">
+                &copy; 2026 智能脑认知与计算实验室 (IBCC Lab). 保留所有权利.
+            </div>
+            <div class="flex space-x-4">
+                <a href="#" class="hover:text-white transition"><i class="fa-brands fa-github text-xl"></i></a>
+                <a href="#" class="hover:text-white transition"><i class="fa-brands fa-twitter text-xl"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript 用于移动端菜单交互 -->
+    <script>
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+
+        const mobileLinks = menu.querySelectorAll('a');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                menu.classList.add('hidden');
+            });
+        });
+    </script>
+</body>
+</html>
