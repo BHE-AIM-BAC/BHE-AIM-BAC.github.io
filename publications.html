@@ -16,21 +16,28 @@
         html {
             scroll-behavior: smooth;
         }
+        /* 修改為 10 行後才顯示省略號 */
+        .line-clamp-10 {
+            display: -webkit-box;
+            -webkit-line-clamp: 10;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
     </style>
 </head>
-<body class="bg-gray-50 text-gray-800 font-sans antialiased">
+<body class="bg-gray-50 text-gray-800 font-sans antialiased flex flex-col min-h-screen">
 
-    <!-- Header (Unified with main page, highlighting current page) -->
+    <!-- 導航欄 (與主頁保持一致，反白當前頁面) -->
     <header class="bg-white shadow-md fixed w-full z-50 top-0">
         <div class="container mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-16">
-                <!-- Lab Logo / Name -->
+                <!-- 實驗室標誌 / 名稱 -->
                 <div class="flex-shrink-0 flex items-center">
                     <i class="fa-solid fa-brain text-blue-600 text-2xl mr-2"></i>
                     <a href="index.html" class="text-xl font-bold text-gray-900">BHE-AIM-BAC</a>
                 </div>
-                
-                <!-- Desktop Menu -->
+
+                <!-- 桌面端選單 -->
                 <nav class="hidden md:flex space-x-8">
                     <a href="index.html" class="text-gray-600 hover:text-blue-600 transition duration-300">Home</a>
                     <a href="research.html" class="text-gray-600 hover:text-blue-600 transition duration-300">Research</a>
@@ -39,7 +46,7 @@
                     <a href="contact.html" class="text-gray-600 hover:text-blue-600 transition duration-300">Contact us</a>
                 </nav>
 
-                <!-- Mobile Menu Button -->
+                <!-- 行動端選單按鈕 -->
                 <div class="md:hidden flex items-center">
                     <button id="mobile-menu-btn" class="text-gray-600 hover:text-gray-900 focus:outline-none">
                         <i class="fa-solid fa-bars text-2xl"></i>
@@ -48,7 +55,7 @@
             </div>
         </div>
 
-        <!-- Mobile Dropdown Menu -->
+        <!-- 行動端下拉選單 -->
         <div id="mobile-menu" class="hidden md:hidden bg-white border-t">
             <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
                 <a href="index.html" class="block px-3 py-2 text-gray-600 hover:text-blue-600 hover:bg-gray-50 rounded-md">Home</a>
@@ -60,7 +67,7 @@
         </div>
     </header>
 
-    <!-- Page Title Banner -->
+    <!-- 頁面標題橫幅 -->
     <div class="pt-24 pb-10 bg-blue-600 text-white text-center">
         <h1 class="text-4xl font-extrabold mb-4">Publications</h1>
         <p class="text-lg text-blue-100 max-w-2xl mx-auto px-4">
@@ -68,112 +75,123 @@
         </p>
     </div>
 
-    <!-- Main Content -->
-    <main class="py-12">
-        <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-5xl">
-            
-            <!-- Year 2026 -->
-            <section class="mb-12">
-                <h2 class="text-2xl font-bold text-gray-900 mb-6 border-b-2 border-gray-200 pb-2">2026</h2>
-                <div class="space-y-6">
-                    <!-- Publication Item -->
-                    <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition">
-                        <h3 class="text-lg font-bold text-gray-900 mb-2">
-                            Energy-Efficient Spiking Neural Networks for Real-time EEG Classification in Edge Devices
-                        </h3>
-                        <p class="text-gray-700 mb-2">
-                            <strong>San Zhang</strong>, Si Li, Wu Wang*.
-                        </p>
-                        <p class="text-gray-500 text-sm mb-4 italic">
-                            IEEE Transactions on Neural Networks and Learning Systems (TNNLS), 2026.
-                        </p>
-                        <div class="flex space-x-3">
-                            <a href="#" class="text-sm bg-blue-50 text-blue-600 px-3 py-1.5 rounded-md hover:bg-blue-100 font-medium transition"><i class="fa-solid fa-file-pdf mr-1"></i> PDF</a>
-                            <a href="#" class="text-sm bg-gray-50 text-gray-600 px-3 py-1.5 rounded-md hover:bg-gray-100 font-medium transition"><i class="fa-solid fa-link mr-1"></i> DOI</a>
-                            <a href="#" class="text-sm bg-gray-50 text-gray-600 px-3 py-1.5 rounded-md hover:bg-gray-100 font-medium transition"><i class="fa-brands fa-github mr-1"></i> Code</a>
+    <!-- 主要內容 -->
+    <main class="py-16 flex-grow">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl">
+
+            <!-- 2026 年論文 -->
+            <section class="mb-16">
+                <h2 class="text-2xl font-bold text-gray-900 mb-8 border-l-4 border-blue-600 pl-4">2026</h2>
+                <div class="space-y-8">
+
+                    <!-- 論文卡片 1 (2026) -->
+                    <div class="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-lg transition-shadow duration-300 flex flex-col md:flex-row">
+                        <!-- 左側：插圖摘要 -->
+                        <div class="md:w-1/3 bg-gray-50 flex-shrink-0 p-4 flex items-center justify-center border-b md:border-b-0 md:border-r border-gray-100">
+                            <img src="https://images.unsplash.com/photo-1530497610245-94d3c16cda28?auto=format&fit=crop&q=80&w=600" alt="Graphical Abstract" class="max-h-48 md:max-h-full object-contain rounded">
+                        </div>
+
+                        <!-- 右側：論文詳情 -->
+                        <div class="md:w-2/3 p-6 md:p-8 flex flex-col justify-center">
+                            <h3 class="text-xl font-bold text-gray-900 mb-3 hover:text-blue-600 transition-colors">
+                                <a href="https://www.sciencedirect.com/science/article/abs/pii/S0952197625031963" target="_blank">
+                                    BBANet: Bilateral biological auditory-inspired neural network for heart sound classification
+                                </a>
+                            </h3>
+                            <p class="text-gray-700 text-sm mb-2 leading-relaxed">
+                                Yang Tan, Haojie Zhang, Jingwen Xu, Hanhan Wu, <strong>Kun Qian</strong>, Bin Hu, Yoshiharu Yamamoto, Björn W. Schuller.
+                            </p>
+                            <p class="text-blue-600 font-medium text-sm mb-4">
+                                <span class="italic text-gray-600 font-normal">Engineering Applications of Artificial Intelligence</span>, 2026.
+                            </p>
+
+                            <!-- 摘要內容 (已修改為 line-clamp-10) -->
+                            <div class="mb-5">
+                                <p class="text-gray-500 text-sm line-clamp-6 text-justify">
+                                    <span class="font-semibold text-gray-700">Abstract:</span>
+                                    Cardiovascular Diseases (CVDs) pose a significant global health challenge. Heart sound classification using computer audition technology holds promise for rapid early screening of CVDs, saving healthcare resources and reducing detection costs. However, there is a gap in artificial intelligence models for simulating expert auscultation based on biological hearing mechanisms. In this study, we develop a multi-frequency-channel-spatial-aware bilateral biological auditory-inspired neural network (BBANet) to fully exploit and integrate inter-layer and left–right information for the short heart sound cycles classification. The bilateral network involves a cochlea-like module and a multi-frequency-channel-spatial-aware attention module in the left and right pathways, and two information fusion modules between the layers. Experimental results show that the BBANet achieves a sensitivity of 92.71%, a specificity of 97.19%, and 96.22% of accuracy and 94.95% of Unweighted Average Recall (UAR, balanced accuracy). The proposed BBANet outperforms the reimplemented state-of-the-art models and the public classical models by 7.41% and 3.84% in average UAR, respectively, which demonstrates the classification potential of models based on biological auditory principles. More importantly, BBANet has the potential to reconstruct the structure of the auditory cortex based on biological auditory transmission and processing within and between the left and right auditory pathways. Therefore, this work helps to bring computer neural networks closer to the human biological auditory system, offering the possibility of reconstructing the auditory cortex from neural networks to better simulate and understand the complex computing mechanisms of the human auditory system. Code has been made available at https://github.com/tanyang89/BBANet.
+                                </p>
+                            </div>
+
+                            <div class="flex flex-wrap gap-3 mt-auto">
+                                <a href="https://www.sciencedirect.com/science/article/abs/pii/S0952197625031963" target="_blank" class="inline-flex items-center text-sm font-semibold text-blue-700 bg-blue-50 hover:bg-blue-600 hover:text-white transition-all duration-300 px-4 py-2 rounded-lg border border-blue-100 hover:border-blue-600 shadow-sm">
+                                    <i class="fa-solid fa-file-pdf mr-2"></i> PDF / Source
+                                </a>
+                                <!-- 新增的 GitHub 按鈕 -->
+                                <a href="https://github.com/tanyang89/BBANet" target="_blank" class="inline-flex items-center text-sm font-semibold text-gray-700 bg-gray-50 hover:bg-gray-800 hover:text-white transition-all duration-300 px-4 py-2 rounded-lg border border-gray-200 hover:border-gray-800 shadow-sm">
+                                    <i class="fa-brands fa-github mr-2"></i> GitHub Code
+                                </a>
+                            </div>
                         </div>
                     </div>
+
                 </div>
             </section>
 
-            <!-- Year 2025 -->
-            <section class="mb-12">
-                <h2 class="text-2xl font-bold text-gray-900 mb-6 border-b-2 border-gray-200 pb-2">2025</h2>
-                <div class="space-y-6">
-                    <!-- Publication Item -->
-                    <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition">
-                        <h3 class="text-lg font-bold text-gray-900 mb-2">
-                            A Novel Deep Learning Framework for Early Depression Detection using Multi-channel EEG
-                        </h3>
-                        <p class="text-gray-700 mb-2">
-                            Si Li, <strong>San Zhang</strong>, Wu Wang*.
-                        </p>
-                        <p class="text-gray-500 text-sm mb-4 italic">
-                            Nature Communications, 2025.
-                        </p>
-                        <div class="flex space-x-3">
-                            <a href="#" class="text-sm bg-blue-50 text-blue-600 px-3 py-1.5 rounded-md hover:bg-blue-100 font-medium transition"><i class="fa-solid fa-file-pdf mr-1"></i> PDF</a>
-                            <a href="#" class="text-sm bg-gray-50 text-gray-600 px-3 py-1.5 rounded-md hover:bg-gray-100 font-medium transition"><i class="fa-solid fa-link mr-1"></i> DOI</a>
+            <!-- 2025 年論文 -->
+            <section class="mb-16">
+                <h2 class="text-2xl font-bold text-gray-900 mb-8 border-l-4 border-blue-600 pl-4">2025</h2>
+                <div class="space-y-8">
+
+                    <!-- 論文卡片 2 (2025) -->
+                    <div class="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-lg transition-shadow duration-300 flex flex-col md:flex-row">
+                        <!-- 左側：插圖摘要 -->
+                        <div class="md:w-1/3 bg-gray-50 flex-shrink-0 p-4 flex items-center justify-center border-b md:border-b-0 md:border-r border-gray-100">
+                            <img src="https://images.unsplash.com/photo-1559757175-5700dde675bc?auto=format&fit=crop&q=80&w=600" alt="Graphical Abstract" class="max-h-48 md:max-h-full object-contain rounded">
+                        </div>
+
+                        <!-- 右側：論文詳情 -->
+                        <div class="md:w-2/3 p-6 md:p-8 flex flex-col justify-center">
+                            <h3 class="text-xl font-bold text-gray-900 mb-3 hover:text-blue-600 transition-colors">
+                                <a href="https://ieeexplore.ieee.org/abstract/document/11271376" target="_blank">
+                                    Can Information Representations Inspired by the Human Auditory Perception Benefit Computer Audition-based Disease Detection? An Interpretable Comparative Study
+                                </a>
+                            </h3>
+                            <p class="text-gray-700 text-sm mb-2 leading-relaxed">
+                                Zhihua Wang, Haojie Zhang, Yang Tan, Rui Wang, <strong>Kun Qian</strong>, Bin Hu, Yoshiharu Yamamoto, and Björn W. Schuller.
+                            </p>
+                            <p class="text-blue-600 font-medium text-sm mb-4">
+                                <span class="italic text-gray-600 font-normal">IEEE Journal of Biomedical and Health Informatics</span>, 2025.
+                            </p>
+
+                            <!-- 摘要內容 (已修改為 line-clamp-10) -->
+                            <div class="mb-5">
+                                <p class="text-gray-500 text-sm line-clamp-6 text-justify">
+                                    <span class="font-semibold text-gray-700">Abstract:</span>
+                                    Computer audition-based methods have attracted a great deal of attention in the field of disease detection due to their significant advantages, e.g., non-invasive and convenient operation. Among them, the introduction of information representations inspired by human auditory perception, e.g., Mel-frequency transformation, gives it great potential to approach and even exceed the limits of the human auditory system. However, according to previous research, it remains challenging to fairly assess whether information representations inspired by human auditory perception have a significant positive effect on disease detection. Moreover, performance differences among various information representations and their underlying causes are yet to be thoroughly investigated and analyzed. To this end, we propose an interpretable comparative study on information representations inspired by human auditory perception for disease detection. First, the detection accuracy of different information representations are investigated on two sound datasets (a psychological and a physiological disease) based on the classical model and the proposed Temporal-Spatial Multi-Scale Perception Network. Then, the noise robustness of these information representations are compared by introducing Gaussian noise with varying signal-to-noise ratios (SNRs). Finally, by combining the human auditory perception mechanism and explainable AI techniques, we analyze the reasons for performance differences among various information representations from qualitative and quantitative perspectives. Experimental results demonstrate that information representations inspired by human auditory perception can improve the performance of disease detection with statistical significance. Furthermore, Gammatone Frequency Cepstral Coefficients (GFCCs) outperform other information representations by achieving the highest accuracy, particularly under noisy conditions. The interpretable results further reveal the underlying reasons...
+                                </p>
+                            </div>
+
+                            <div class="flex flex-wrap gap-3 mt-auto">
+                                <a href="https://ieeexplore.ieee.org/abstract/document/11271376" target="_blank" class="inline-flex items-center text-sm font-semibold text-blue-700 bg-blue-50 hover:bg-blue-600 hover:text-white transition-all duration-300 px-4 py-2 rounded-lg border border-blue-100 hover:border-blue-600 shadow-sm">
+                                    <i class="fa-solid fa-file-pdf mr-2"></i> PDF / Source
+                                </a>
+                                <!-- 新增的 GitHub 按鈕 -->
+
+                            </div>
                         </div>
                     </div>
 
-                    <!-- Publication Item -->
-                    <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition">
-                        <h3 class="text-lg font-bold text-gray-900 mb-2">
-                            Robust Spatial-Temporal Feature Extraction for Motor Imagery BCI
-                        </h3>
-                        <p class="text-gray-700 mb-2">
-                            Xiaoming Wang, Li Chen, Wu Wang*.
-                        </p>
-                        <p class="text-gray-500 text-sm mb-4 italic">
-                            Journal of Neural Engineering, 2025.
-                        </p>
-                        <div class="flex space-x-3">
-                            <a href="#" class="text-sm bg-gray-50 text-gray-600 px-3 py-1.5 rounded-md hover:bg-gray-100 font-medium transition"><i class="fa-solid fa-link mr-1"></i> DOI</a>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Year 2024 & Earlier -->
-            <section>
-                <h2 class="text-2xl font-bold text-gray-900 mb-6 border-b-2 border-gray-200 pb-2">2024 & Earlier</h2>
-                <div class="space-y-6">
-                    <!-- Publication Item -->
-                    <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition">
-                        <h3 class="text-lg font-bold text-gray-900 mb-2">
-                            Explainable AI in Medical Image Segmentation: A Comprehensive Review
-                        </h3>
-                        <p class="text-gray-700 mb-2">
-                            Zhiguo Sun, Wu Wang*.
-                        </p>
-                        <p class="text-gray-500 text-sm mb-4 italic">
-                            Medical Image Analysis, 2024.
-                        </p>
-                        <div class="flex space-x-3">
-                            <a href="#" class="text-sm bg-blue-50 text-blue-600 px-3 py-1.5 rounded-md hover:bg-blue-100 font-medium transition"><i class="fa-solid fa-file-pdf mr-1"></i> PDF</a>
-                        </div>
-                    </div>
                 </div>
             </section>
 
         </div>
     </main>
 
-    <!-- Footer -->
-    <footer class="bg-gray-900 text-gray-400 py-8 mt-12">
+    <!-- 頁腳 -->
+    <footer class="bg-gray-900 text-gray-400 py-8 mt-auto">
         <div class="container mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center text-sm">
             <div class="mb-4 md:mb-0">
                 &copy; 2026 BHE-AIM-BAC Lab. All rights reserved.
             </div>
             <div class="flex space-x-4">
-                <a href="#" class="hover:text-white transition"><i class="fa-brands fa-github text-xl"></i></a>
-                <a href="#" class="hover:text-white transition"><i class="fa-brands fa-twitter text-xl"></i></a>
+                <!--<a href="#" class="hover:text-white transition"><i class="fa-brands fa-github text-xl"></i></a>
+                <a href="#" class="hover:text-white transition"><i class="fa-brands fa-twitter text-xl"></i></a>-->
             </div>
         </div>
     </footer>
 
-    <!-- Mobile Menu Script -->
+    <!-- 行動端選單腳本 -->
     <script>
         const btn = document.getElementById('mobile-menu-btn');
         const menu = document.getElementById('mobile-menu');

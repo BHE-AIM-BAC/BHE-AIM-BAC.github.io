@@ -65,7 +65,7 @@
     <div class="pt-24 pb-10 bg-blue-600 text-white text-center">
         <h1 class="text-4xl font-extrabold mb-4">Our team</h1>
         <p class="text-lg text-blue-100 max-w-2xl mx-auto px-4">
-            汇聚计算机、神经科学与生物医学工程的跨学科创新力量，共同探索人类认知的奥秘。
+            Converging interdisciplinary innovation across computer science, neuroscience, and biomedical engineering to collectively explore the profound mysteries of human cognition.
         </p>
     </div>
 
@@ -74,110 +74,181 @@
         <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl">
 
             <!-- 1. 实验室负责人 (PI) -->
-            <section class="mb-16">
-                <h2 class="text-2xl font-bold text-gray-800 mb-8 border-l-4 border-blue-600 pl-4">实验室负责人 (Principal Investigator)</h2>
-                <div class="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden flex flex-col md:flex-row">
-                    <div class="md:w-1/3 bg-gray-100 flex justify-center items-center p-8">
-                        <img src="https://ui-avatars.com/api/?name=W+W&background=random&size=256" alt="王教授" class="w-48 h-48 rounded-full shadow-md border-4 border-white object-cover">
-                    </div>
-                    <div class="md:w-2/3 p-8">
-                        <h3 class="text-3xl font-bold text-gray-900 mb-2">王五 教授</h3>
-                        <p class="text-blue-600 font-medium mb-4">博士生导师 / 某某大学计算机学院</p>
+            <section class="mb-20">
+                <div class="flex items-center mb-8">
+                    <h2 class="text-3xl font-extrabold text-gray-900">Principal Investigator</h2>
+                    <div class="ml-4 flex-grow h-px bg-gray-200"></div>
+                </div>
 
-                        <div class="flex flex-wrap gap-2 mb-6">
-                            <span class="bg-blue-50 text-blue-700 text-xs px-3 py-1 rounded-full font-medium">类脑计算</span>
-                            <span class="bg-blue-50 text-blue-700 text-xs px-3 py-1 rounded-full font-medium">计算神经科学</span>
-                            <span class="bg-blue-50 text-blue-700 text-xs px-3 py-1 rounded-full font-medium">脑机接口</span>
+                <div class="bg-white rounded-2xl shadow-md border border-gray-100 overflow-hidden flex flex-col lg:flex-row hover:shadow-xl transition-shadow duration-300 group">
+                    <!-- 左侧：头像与渐变背景，加大了宽度比例 -->
+                    <div class="lg:w-5/12 bg-gradient-to-br from-blue-50 via-white to-indigo-50 flex flex-col justify-center items-center p-8 sm:p-12 border-r border-gray-50 relative overflow-hidden">
+                        <!-- 装饰性背景光晕 -->
+                        <div class="absolute top-0 right-0 -mr-8 -mt-8 w-32 h-32 rounded-full bg-blue-100 opacity-50 blur-2xl"></div>
+                        <div class="absolute bottom-0 left-0 -ml-8 -mb-8 w-24 h-24 rounded-full bg-indigo-100 opacity-50 blur-xl"></div>
+
+                        <!-- 教师头像也改为卡片状态 (3:4 比例)，放大了整体尺寸 -->
+                        <div class="w-64 sm:w-72 lg:w-80 aspect-[3/4] rounded-2xl shadow-xl border-4 border-white overflow-hidden relative z-10 group-hover:-translate-y-2 transition-transform duration-500">
+                            <img src="photo/qk.png" alt="Kun Qian" class="w-full h-full object-cover object-top">
+                        </div>
+                    </div>
+
+                    <!-- 右侧：详细信息 -->
+                    <div class="lg:w-7/12 p-8 md:p-10 flex flex-col justify-center">
+                        <!-- 姓名 -->
+                        <div class="mb-2">
+                            <h3 class="text-3xl font-black text-gray-900 tracking-tight flex items-baseline">
+                                Kun Qian <span class="text-xl md:text-2xl font-bold text-gray-500 ml-3">钱昆</span>
+                            </h3>
                         </div>
 
-                        <p class="text-gray-600 leading-relaxed mb-6">
-                            王五教授于某某大学获得计算机科学博士学位，随后在海外顶尖实验室从事博士后研究。主要从事类脑计算、计算神经科学、机器学习等方面的交叉研究。在 Nature Communications, IEEE TNNLS 等国际顶级期刊和会议上发表论文 50 余篇，主持多项国家级科研项目。
+                        <!-- 头衔 -->
+                        <p class="text-blue-600 font-semibold mb-6 flex items-center text-sm md:text-base">
+                            <i class="fa-solid fa-building-columns mr-2 opacity-80"></i> Professor / Beijing Institute of Technology
                         </p>
 
-                        <div class="flex items-center space-x-4">
-                            <a href="mailto:prof.wang@university.edu" class="text-gray-500 hover:text-blue-600 transition flex items-center">
-                                <i class="fa-regular fa-envelope mr-2"></i> prof.wang@university.edu
+                        <!-- 研究方向标签 -->
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="bg-blue-50 text-blue-700 border border-blue-100 text-xs px-3 py-1.5 rounded-lg font-medium shadow-sm">Computer Audition</span>
+                            <span class="bg-blue-50 text-blue-700 border border-blue-100 text-xs px-3 py-1.5 rounded-lg font-medium shadow-sm">Affective Computing</span>
+                            <span class="bg-blue-50 text-blue-700 border border-blue-100 text-xs px-3 py-1.5 rounded-lg font-medium shadow-sm">Brain-inspired Computation</span>
+                        </div>
+
+                        <!-- 个人简介 (font-serif) -->
+                        <p class="font-serif text-gray-700 leading-relaxed mb-8 text-sm md:text-base text-justify tracking-wide">
+                            Kun QIAN received his doctoral degree (Dr.-Ing.) for his study on automatic general audio signal classification in 2018 in electrical engineering and information technology from Technische Universität München (TUM), Germany. From 2021, he has been appointed as a (Full) Professor with a title of “Teli Young Fellow” at the Beijing Institute of Technology, China. He is a Senior Member of the IEEE. He has a strong collaboration connection to prestigious universities in Germany, UK, Japan, Singapore, and the USA. He was elected as the Forbes China “100 Outstanding Overseas Returnees” in 2023 and the MIT Technology Review (China) & DeepTech “Intelligent Computing Innovators 2023 of China”. Dr.Qian serves as an Associate Editor for the IEEE Transactions on Affective Computing. He (co-)authored more than 160 publications in peer reviewed journals, and conference proceedings having received more than 3k citations (h-index 33).
+                        </p>
+
+                        <!-- 底部按钮区 -->
+                        <div class="flex flex-wrap items-center gap-4">
+                            <!-- 邮箱按钮 -->
+                            <a  class="inline-flex items-center text-sm font-semibold text-gray-700 bg-gray-50 hover:bg-blue-600 hover:text-white transition-all duration-300 px-5 py-2.5 rounded-lg border border-gray-200 hover:border-blue-600 shadow-sm">
+                                <i class="fa-solid fa-envelope mr-2"></i> qian@bit.edu.cn
                             </a>
-                            <a href="#" class="text-gray-500 hover:text-blue-600 transition flex items-center">
-                                <i class="fa-solid fa-link mr-2"></i> 个人主页
+                            <!-- 个人主页按钮 -->
+                            <a href="https://eecsqian.com/" target="_blank" class="inline-flex items-center text-sm font-semibold text-gray-700 bg-gray-50 hover:bg-blue-600 hover:text-white transition-all duration-300 px-5 py-2.5 rounded-lg border border-gray-200 hover:border-blue-600 shadow-sm">
+                                <i class="fa-solid fa-globe mr-2"></i> Personal Homepage
                             </a>
                         </div>
                     </div>
                 </div>
             </section>
 
-            <!-- 2. 博士后与研究员 -->
+            <!-- 2. 博士后与研究员 (单独成行) -->
             <section class="mb-16">
-                <h2 class="text-2xl font-bold text-gray-800 mb-8 border-l-4 border-blue-600 pl-4">博士后 / 助理研究员</h2>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="flex items-center mb-6">
+                    <h2 class="text-2xl font-bold text-gray-800 border-l-4 border-blue-600 pl-4">Postdoc Researchers</h2>
+                </div>
+
+                <!-- 放大卡片尺寸：调整为4列网格并增加间距 -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 sm:gap-8">
+
                     <!-- 研究员 1 -->
-                    <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 flex items-center space-x-4 hover:shadow-md transition">
-                        <img src="https://ui-avatars.com/api/?name=C+L&background=random" alt="陈立" class="w-16 h-16 rounded-full">
-                        <div>
-                            <h4 class="text-lg font-bold text-gray-900">陈立 博士</h4>
-                            <p class="text-sm text-blue-600 mb-1">博士后研究员</p>
-                            <p class="text-xs text-gray-500">研究方向：脉冲神经网络硬件加速</p>
+                    <div class="bg-white rounded-2xl shadow-sm border border-gray-100 text-center hover:-translate-y-2 hover:shadow-xl transition-all duration-300 relative group p-4 sm:p-6">
+                        <!-- 放大内部照片宽度为 11/12 -->
+                        <div class="relative w-11/12 mx-auto aspect-[3/4] overflow-hidden bg-gray-100 rounded-xl mb-5 shadow-sm mt-1">
+                            <div class="absolute top-3 left-3 bg-white/90 backdrop-blur-sm text-blue-600 w-8 h-8 rounded-lg flex items-center justify-center shadow-sm z-10" title="Postdoc Researcher">
+                                <i class="fa-solid fa-id-card-clip text-sm"></i>
+                            </div>
+                            <img src="https://ui-avatars.com/api/?name=C+L&background=random" alt="陈立" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500">
+                        </div>
+                        <div class="flex flex-col items-center px-1 pb-1">
+                            <h4 class="font-bold text-gray-900 text-xl mb-1">陈立</h4>
+                            <p class="text-sm text-blue-500 font-medium mb-4">Postdoc Researcher</p>
+                            <div class="w-full border-t border-gray-100 pt-3 mt-1">
+                                <a  class="text-sm text-gray-500 hover:text-blue-600 transition inline-flex items-center justify-center truncate w-full">
+                                    <i class="fa-regular fa-envelope mr-1.5 text-blue-400"></i> chenli@bit.edu.cn
+                                </a>
+                            </div>
                         </div>
                     </div>
-                </div>
-            </section>
-
-            <!-- 3. 博士研究生 -->
-            <section class="mb-16">
-                <h2 class="text-2xl font-bold text-gray-800 mb-8 border-l-4 border-blue-600 pl-4">博士研究生</h2>
-                <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
-
-                    <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 text-center hover:-translate-y-1 hover:shadow-lg transition duration-300">
-                        <img src="https://ui-avatars.com/api/?name=Z+S&background=random" alt="张三" class="w-24 h-24 mx-auto rounded-full mb-4 shadow-sm">
-                        <h4 class="font-bold text-gray-900 text-lg">张三</h4>
-                        <p class="text-xs text-gray-500 mb-2">2023级 博士生</p>
-                        <p class="text-xs text-gray-600 line-clamp-2">脑电信号解码与情感计算</p>
-                    </div>
-
-                    <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 text-center hover:-translate-y-1 hover:shadow-lg transition duration-300">
-                        <img src="https://ui-avatars.com/api/?name=L+X&background=random" alt="李雪" class="w-24 h-24 mx-auto rounded-full mb-4 shadow-sm">
-                        <h4 class="font-bold text-gray-900 text-lg">李雪</h4>
-                        <p class="text-xs text-gray-500 mb-2">2024级 博士生</p>
-                        <p class="text-xs text-gray-600 line-clamp-2">多模态认知模型构建</p>
-                    </div>
 
                 </div>
             </section>
 
-            <!-- 4. 硕士研究生 -->
+            <!-- 3. 学生团队 (博士、硕士与本科生) -->
             <section class="mb-16">
-                <h2 class="text-2xl font-bold text-gray-800 mb-8 border-l-4 border-blue-600 pl-4">硕士研究生</h2>
-                <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
+                <div class="flex items-center mb-6">
+                    <h2 class="text-2xl font-bold text-gray-800 border-l-4 border-blue-600 pl-4">Students</h2>
+                </div>
 
-                    <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 text-center hover:-translate-y-1 hover:shadow-lg transition duration-300">
-                        <img src="https://ui-avatars.com/api/?name=W+X&background=random" alt="王晓明" class="w-20 h-20 mx-auto rounded-full mb-4 shadow-sm">
-                        <h4 class="font-bold text-gray-900">王晓明</h4>
-                        <p class="text-xs text-gray-500 mb-1">2024级 硕士生</p>
+                <!-- 放大卡片尺寸：调整为4列网格并增加间距 -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 sm:gap-8">
+
+                    <!-- 博士生 1 -->
+                    <div class="bg-white rounded-2xl shadow-sm border border-gray-100 text-center hover:-translate-y-2 hover:shadow-xl transition-all duration-300 relative group p-4 sm:p-6">
+                        <div class="relative w-11/12 mx-auto aspect-[3/4] overflow-hidden bg-gray-100 rounded-xl mb-5 shadow-sm mt-1">
+                            <!-- 统一主题蓝色 text-blue-600，学士帽图标 -->
+                            <div class="absolute top-3 left-3 bg-white/90 backdrop-blur-sm text-blue-600 w-8 h-8 rounded-lg flex items-center justify-center shadow-sm z-10" title="PhD Student">
+                                <i class="fa-solid fa-graduation-cap text-sm"></i>
+                            </div>
+                            <img src="#" alt="张三" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500">
+                        </div>
+                        <div class="flex flex-col items-center px-1 pb-1">
+                            <h4 class="font-bold text-gray-900 text-xl mb-1">Rui Wang</h4>
+                            <h4 class="font-bold text-gray-900 text-lg mb-1">王睿</h4>
+                            <p class="text-sm text-blue-500 font-medium mb-4">PhD Student, 2025</p>
+                            <div class="w-full border-t border-gray-100 pt-3 mt-1">
+                                <a  class="text-sm text-gray-500 hover:text-blue-600 transition inline-flex items-center justify-center truncate w-full">
+                                    <i class="fa-regular fa-envelope mr-1.5 text-blue-400"></i> wangrui59@bit.edu.cn
+                                </a>
+                            </div>
+                        </div>
                     </div>
 
-                    <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 text-center hover:-translate-y-1 hover:shadow-lg transition duration-300">
-                        <img src="https://ui-avatars.com/api/?name=Z+H&background=random" alt="赵海" class="w-20 h-20 mx-auto rounded-full mb-4 shadow-sm">
-                        <h4 class="font-bold text-gray-900">赵海</h4>
-                        <p class="text-xs text-gray-500 mb-1">2025级 硕士生</p>
+
+                    <!-- 硕士生 1 -->
+                    <div class="bg-white rounded-2xl shadow-sm border border-gray-100 text-center hover:-translate-y-2 hover:shadow-xl transition-all duration-300 relative group p-4 sm:p-6">
+                        <div class="relative w-11/12 mx-auto aspect-[3/4] overflow-hidden bg-gray-100 rounded-xl mb-5 shadow-sm mt-1">
+                            <div class="absolute top-3 left-3 bg-white/90 backdrop-blur-sm text-blue-600 w-8 h-8 rounded-lg flex items-center justify-center shadow-sm z-10" title="Master Student">
+                                <i class="fa-solid fa-display text-sm"></i>
+                            </div>
+                            <img src="#" alt="#" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500">
+                        </div>
+                        <div class="flex flex-col items-center px-1 pb-1">
+                            <h4 class="font-bold text-gray-900 text-xl mb-1">Minghao Yan</h4>
+                            <h4 class="font-bold text-gray-900 text-lg mb-1">鄢铭浩</h4>
+                            <p class="text-sm text-blue-500 font-medium mb-4">Master Student, 2025</p>
+                            <div class="w-full border-t border-gray-100 pt-3 mt-1">
+                                <a  class="text-sm text-gray-500 hover:text-blue-600 transition inline-flex items-center justify-center truncate w-full">
+                                    <i class="fa-regular fa-envelope mr-1.5 text-blue-400"></i> yanminghao@bit.edu.cn
+                                </a>
+                            </div>
+                        </div>
                     </div>
 
-                    <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 text-center hover:-translate-y-1 hover:shadow-lg transition duration-300">
-                        <img src="https://ui-avatars.com/api/?name=L+M&background=random" alt="刘梅" class="w-20 h-20 mx-auto rounded-full mb-4 shadow-sm">
-                        <h4 class="font-bold text-gray-900">刘梅</h4>
-                        <p class="text-xs text-gray-500 mb-1">2025级 硕士生</p>
+                    <!-- 本科生 1 -->
+                    <div class="bg-white rounded-2xl shadow-sm border border-gray-100 text-center hover:-translate-y-2 hover:shadow-xl transition-all duration-300 relative group p-4 sm:p-6">
+                        <div class="relative w-11/12 mx-auto aspect-[3/4] overflow-hidden bg-gray-100 rounded-xl mb-5 shadow-sm mt-1">
+                            <!-- 更改本科生图标为做笔记的学生 fa-user-pen -->
+                            <div class="absolute top-3 left-3 bg-white/90 backdrop-blur-sm text-blue-600 w-8 h-8 rounded-lg flex items-center justify-center shadow-sm z-10" title="Bachelor Student">
+                                <i class="fa-solid fa-user-pen text-sm"></i>
+                            </div>
+                            <img src="https://ui-avatars.com/api/?name=H+Y&background=random" alt="杨宏宇" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500">
+                        </div>
+                        <div class="flex flex-col items-center px-1 pb-1">
+                            <h4 class="font-bold text-gray-900 text-xl mb-1">Test</h4>
+                            <h4 class="font-bold text-gray-900 text-xl mb-1">ceshi</h4>
+                            <p class="text-sm text-blue-500 font-medium mb-4">Bachelor Student, 2022</p>
+                            <div class="w-full border-t border-gray-100 pt-3 mt-1">
+                                <a  class="text-sm text-gray-500 hover:text-blue-600 transition inline-flex items-center justify-center truncate w-full">
+                                    <i class="fa-regular fa-envelope mr-1.5 text-blue-400"></i> hyang@bit.edu.cn
+                                </a>
+                            </div>
+                        </div>
                     </div>
 
                 </div>
             </section>
 
             <!-- 5. 毕业校友 -->
-            <section>
+            <!--<section>
                 <h2 class="text-2xl font-bold text-gray-800 mb-8 border-l-4 border-gray-400 pl-4">毕业校友</h2>
                 <div class="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden">
                     <table class="w-full text-left border-collapse">
                         <thead>
                             <tr class="bg-gray-50 text-gray-600 text-sm uppercase tracking-wider">
-                                <th class="p-4 border-b">姓名</th>
+                                <th class="p-4 border-b">Name</th>
                                 <th class="p-4 border-b">学位/届别</th>
                                 <th class="p-4 border-b hidden md:table-cell">研究课题</th>
                                 <th class="p-4 border-b">毕业去向</th>
@@ -202,14 +273,14 @@
             </section>
 
         </div>
-    </main>
+    </main>-->
 
     <!-- 加入我们 CTA -->
     <section class="py-12 bg-blue-50">
         <div class="container mx-auto px-4 text-center">
-            <h3 class="text-2xl font-bold text-gray-900 mb-4">想要加入我们吗？</h3>
-            <p class="text-gray-600 mb-6 max-w-2xl mx-auto">我们常年招收有激情的硕士生、博士生。如果你对类脑计算与人工智能感兴趣，欢迎联系我们。</p>
-            <a href="contact.html" class="inline-block bg-blue-600 text-white px-8 py-3 rounded-md font-bold hover:bg-blue-700 transition shadow-md">查看招生信息</a>
+            <h3 class="text-2xl font-bold text-gray-900 mb-4">Get in Touch</h3>
+            <p class="text-gray-600 mb-6 max-w-2xl mx-auto">We are always looking for passionate students and researchers to join us.</p>
+            <a href="contact.html" class="inline-block bg-blue-600 text-white px-8 py-3 rounded-md font-bold hover:bg-blue-700 transition shadow-md">Contact us</a>
         </div>
     </section>
 
@@ -217,7 +288,7 @@
     <footer class="bg-gray-900 text-gray-400 py-8">
         <div class="container mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center text-sm">
             <div class="mb-4 md:mb-0">
-                &copy; 2026 智能脑认知与计算实验室 (IBCC Lab). 保留所有权利.
+                &copy; 2026 BHE-AIM-BAC Lab. All rights reserved.
             </div>
             <div class="flex space-x-4">
                 <a href="#" class="hover:text-white transition"><i class="fa-brands fa-github text-xl"></i></a>

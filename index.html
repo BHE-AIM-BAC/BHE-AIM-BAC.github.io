@@ -61,23 +61,40 @@
         </div>
     </header>
 
-    <!-- 主视觉区 (Hero Section) -->
+        <!-- 主视觉区 (Hero Section) -->
     <section id="home" class="pt-24 pb-12 md:pt-32 md:pb-24 bg-blue-50">
         <div class="container mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center">
             <div class="md:w-1/2 md:pr-10 mb-10 md:mb-0">
-                <h1 class="text-4xl md:text-6xl font-extrabold text-gray-900 leading-none mb-4 flex flex-col">
-    <span>WELCOME TO BAC</span>
+                <h1 class="text-5xl md:text-6xl font-black text-gray-900 leading-tight mb-2 tracking-tight uppercase">
+                    WELCOME TO BAC
+                </h1>
+                <h2 class="text-2xl md:text-3xl font-bold text-blue-600 mb-8">
+                    Brain-inspired Auditory Computation
+                </h2>
 
-    <span class="text-blue-600 text-base md:text-3xl font-bold tracking-tight mt-2">
-        Brain-inspired Auditory Computation
-    </span>
-</h1>
-                <p class="text-lg text-gray-600 mb-8 leading-relaxed">
-                    test
-                </p>
+                <div class="space-y-5 text-gray-600 leading-relaxed mb-10">
+                    <p class="font-bold text-gray-800 text-xl">
+                        Welcome to the BHE-AIM-BAC website!
+                    </p>
+
+                    <!-- 高亮區塊 -->
+                    <div class="border-l-4 border-blue-500 pl-4 py-3 bg-white/60 rounded-r-lg shadow-sm">
+                        <p class="text-base text-gray-700">
+                            Affiliated with the <span class="font-semibold text-blue-700">Key Laboratory of Brain Health Intelligent Evaluation and Intervention (Ministry of Education)</span>, our lab operates at the cutting-edge intersection of medicine and engineering.
+                        </p>
+                    </div>
+
+                    <p class="text-base md:text-lg">
+                        We are dedicated to advancing brain health research through the lens of brain-inspired auditory computation. We invite visitors from all disciplines to explore our research achievements and meet our team.
+                    </p>
+                    <p class="text-base md:text-lg">
+                        We look forward to collaborating with you to push the boundaries of neural science and intelligent technology.
+                    </p>
+                </div>
+
                 <div class="flex space-x-4">
-                    <a href="#research" class="bg-blue-600 text-white px-6 py-3 rounded-md font-medium hover:bg-blue-700 transition duration-300 shadow-md">Our research</a>
-                    <a href="#contact" class="bg-white text-blue-600 border border-blue-600 px-6 py-3 rounded-md font-medium hover:bg-blue-50 transition duration-300">Join us</a>
+                    <a href="research.html" class="bg-blue-600 text-white px-8 py-3 rounded-md font-bold hover:bg-blue-700 transition duration-300 shadow-md">Our research</a>
+                    <a href="contact.html" class="bg-white text-blue-600 border-2 border-blue-600 px-8 py-3 rounded-md font-bold hover:bg-blue-50 transition duration-300">Join us</a>
                 </div>
             </div>
             <div class="md:w-1/2">
@@ -87,34 +104,60 @@
         </div>
     </section>
 
-    <!-- 新闻动态 (News) -->
-    <section class="py-12 bg-white">
+<!-- 新闻动态 (News) -->
+    <section class="py-16 bg-white">
         <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-2xl font-bold text-gray-900 mb-6 border-l-4 border-blue-600 pl-3">News</h2>
-            <div class="space-y-4">
-                <div class="flex flex-col sm:flex-row sm:items-center bg-gray-50 p-4 rounded-lg border border-gray-100">
-                    <span class="text-blue-600 font-bold min-w-[100px] mb-2 sm:mb-0">2026年3月</span>
-                    <p class="text-gray-700">🎉 恭喜实验室团队在 <strong>Nature Communications</strong> 上发表关于脉冲神经网络的新研究！</p>
+            <!-- 标题居中，与全站风格统一 -->
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-extrabold text-gray-900 mb-4">News</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Stay updated with our latest research breakthroughs and lab events.</p>
+            </div>
+
+            <div class="max-w-4xl mx-auto space-y-6">
+                <!-- News Item 1 -->
+                <div class="flex flex-col sm:flex-row bg-white rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition-all duration-300 overflow-hidden group cursor-default">
+                    <!-- 左侧日期区块 -->
+                    <div class="bg-blue-50/50 sm:w-32 flex-shrink-0 flex flex-col justify-center items-center py-5 px-2 border-b sm:border-b-0 sm:border-r border-gray-100 group-hover:bg-blue-600 transition-colors duration-500">
+                        <span class="text-3xl font-black text-blue-600 group-hover:text-white transition-colors duration-500">03</span>
+                        <span class="text-xs font-bold text-gray-500 uppercase tracking-widest group-hover:text-blue-100 mt-1 transition-colors duration-500">2026.Mar</span>
+                    </div>
+                    <!-- 右侧内容 -->
+                    <div class="p-6 md:p-8 flex items-center w-full">
+                        <p class="text-gray-700 text-base md:text-lg leading-relaxed">
+                            🎉 恭喜实验室团队在 <strong class="text-gray-900">Nature</strong> 上发表关于脉冲神经网络的新研究！
+                        </p>
+                    </div>
                 </div>
-                <div class="flex flex-col sm:flex-row sm:items-center bg-gray-50 p-4 rounded-lg border border-gray-100">
-                    <span class="text-blue-600 font-bold min-w-[100px] mb-2 sm:mb-0">2025年12月</span>
-                    <p class="text-gray-700">🔬 实验室获批国家自然科学基金重点项目一项，致力于多模态脑电信号处理。</p>
+
+                <!-- News Item 2 -->
+                <div class="flex flex-col sm:flex-row bg-white rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition-all duration-300 overflow-hidden group cursor-default">
+                    <!-- 左侧日期区块 -->
+                    <div class="bg-blue-50/50 sm:w-32 flex-shrink-0 flex flex-col justify-center items-center py-5 px-2 border-b sm:border-b-0 sm:border-r border-gray-100 group-hover:bg-blue-600 transition-colors duration-500">
+                        <span class="text-3xl font-black text-blue-600 group-hover:text-white transition-colors duration-500">12</span>
+                        <span class="text-xs font-bold text-gray-500 uppercase tracking-widest group-hover:text-blue-100 mt-1 transition-colors duration-500">2025.Dec</span>
+                    </div>
+                    <!-- 右侧内容 -->
+                    <div class="p-6 md:p-8 flex items-center w-full">
+                        <p class="text-gray-700 text-base md:text-lg leading-relaxed">
+                            🔬 实验室获批国家自然科学基金重点项目一项，致力于多模态脑电信号处理。
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- 研究方向 (Research) -->
-    <section id="research" class="py-16 bg-gray-50">
+    <!-- 研究方向 (Research) (已加深背景色为 bg-gray-100) -->
+    <section id="research" class="py-16 bg-gray-100">
         <div class="container mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-12">
                 <h2 class="text-3xl font-extrabold text-gray-900 mb-4">Research</h2>
-                <p class="text-gray-600 max-w-2xl mx-auto">我们立足于交叉学科，在以下几个核心领域开展前沿探索。</p>
+                <p class="text-gray-600 max-w-2xl mx-auto">Grounded in interdisciplinary research, we conduct frontier exploration in the following core areas.</p>
             </div>
-            
+
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <!-- 研究方向 1 -->
-                <div class="bg-white rounded-xl shadow-sm overflow-hidden border border-gray-100 hover:shadow-lg transition duration-300">
+                <div class="bg-white rounded-xl shadow-sm overflow-hidden border border-gray-200 hover:shadow-lg transition duration-300">
                     <img src="https://images.unsplash.com/photo-1559757175-5700dde675bc?auto=format&fit=crop&q=80&w=800" alt="脑电信号分析" class="w-full h-48 object-cover">
                     <div class="p-6">
                         <h3 class="text-xl font-bold text-gray-900 mb-2">脑电图 (EEG) 与情感识别</h3>
@@ -125,7 +168,7 @@
                 </div>
 
                 <!-- 研究方向 2 -->
-                <div class="bg-white rounded-xl shadow-sm overflow-hidden border border-gray-100 hover:shadow-lg transition duration-300">
+                <div class="bg-white rounded-xl shadow-sm overflow-hidden border border-gray-200 hover:shadow-lg transition duration-300">
                     <img src="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&q=80&w=800" alt="类脑计算" class="w-full h-48 object-cover">
                     <div class="p-6">
                         <h3 class="text-xl font-bold text-gray-900 mb-2">脉冲神经网络 (SNNs)</h3>
@@ -134,6 +177,12 @@
                         </p>
                     </div>
                 </div>
+
+
+            </div>
+            <br>
+            <div class="text-center pt-4">
+                    <a href="research.html" class="text-blue-600 font-medium hover:underline">All research directions &rarr;</a>
             </div>
         </div>
     </section>
@@ -143,74 +192,79 @@
         <div class="container mx-auto px-4 sm:px-6 lg:px-8">
             <h2 class="text-3xl font-extrabold text-gray-900 mb-10 text-center">Publications</h2>
             <div class="max-w-4xl mx-auto space-y-6">
-                
-                <!-- 论文 1 -->
-                <div class="border-b border-gray-200 pb-6">
-                    <h4 class="text-lg font-bold text-gray-900 mb-1 hover:text-blue-600 cursor-pointer">
-                        Energy-Efficient Spiking Neural Networks for Real-time EEG Classification
-                    </h4>
-                    <p class="text-gray-600 text-sm mb-2">
-                        <strong>张三</strong>, 李四, 王五 (通讯作者). 
-                        <span class="italic">IEEE Transactions on Neural Networks and Learning Systems</span>, 2025.
-                    </p>
-                    <div class="flex space-x-3">
-                        <a href="#" class="text-xs bg-blue-100 text-blue-700 px-2 py-1 rounded hover:bg-blue-200">PDF 下载</a>
-                        <a href="#" class="text-xs bg-gray-100 text-gray-700 px-2 py-1 rounded hover:bg-gray-200">DOI</a>
-                    </div>
-                </div>
 
                 <!-- 论文 2 -->
                 <div class="border-b border-gray-200 pb-6">
                     <h4 class="text-lg font-bold text-gray-900 mb-1 hover:text-blue-600 cursor-pointer">
-                        A Novel Deep Learning Framework for Depression Detection using Multi-channel EEG
+                        BBANet: Bilateral biological auditory-inspired neural network for heart sound classification
                     </h4>
                     <p class="text-gray-600 text-sm mb-2">
-                        李四, <strong>张三</strong>. 
-                        <span class="italic">Journal of Neural Engineering</span>, 2024.
+                        Yang Tan, Haojie Zhang, Jingwen Xu, Hanhan Wu, Kun Qian, Bin Hu, Yoshiharu Yamamoto, Björn W. Schuller.<br>
+                        <span class="italic">Engineering Applications of Artificial Intelligence</span>, 2026.
                     </p>
                     <div class="flex space-x-3">
-                        <a href="#" class="text-xs bg-blue-100 text-blue-700 px-2 py-1 rounded hover:bg-blue-200">PDF 下载</a>
+                        <a href="https://www.sciencedirect.com/science/article/abs/pii/S0952197625031963" class="text-xs bg-blue-100 text-blue-700 px-2 py-1 rounded hover:bg-blue-200">PDF</a>
+                        <!--<a href="#" class="text-xs bg-gray-100 text-gray-700 px-2 py-1 rounded hover:bg-gray-200">DOI</a>-->
+                    </div>
+                </div>
+
+                <!-- 论文 1 -->
+                <div class="border-b border-gray-200 pb-6">
+                    <h4 class="text-lg font-bold text-gray-900 mb-1 hover:text-blue-600 cursor-pointer">
+                        Can Information Representations Inspired by the Human Auditory Perception Benefit Computer Audition-based Disease Detection? An Interpretable Comparative Study
+                    </h4>
+                    <p class="text-gray-600 text-sm mb-2">
+                        Zhihua Wang, Haojie Zhang, Yang Tan, Rui Wang, Kun Qian, Bin Hu, Yoshiharu Yamamoto, and Björn W. Schuller.<br>
+                        <span class="italic">IEEE Journal of Biomedical and Health Informatics</span>, 2025.
+                    </p>
+                    <div class="flex space-x-3">
+                        <a href="https://ieeexplore.ieee.org/abstract/document/11271376" class="text-xs bg-blue-100 text-blue-700 px-2 py-1 rounded hover:bg-blue-200">PDF</a>
                     </div>
                 </div>
 
                 <div class="text-center pt-4">
-                    <a href="#" class="text-blue-600 font-medium hover:underline">查看所有发表论文 &rarr;</a>
+                    <a href="publications.html" class="text-blue-600 font-medium hover:underline">All publications &rarr;</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- 团队成员 (Team) -->
-    <section id="team" class="py-16 bg-gray-50">
+    <!-- 团队成员 (Team) (已加深背景色为 bg-gray-100) -->
+    <section id="team" class="py-16 bg-gray-100">
         <div class="container mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-12">
                 <h2 class="text-3xl font-extrabold text-gray-900 mb-4">Team</h2>
-                <p class="text-gray-600 max-w-2xl mx-auto">一群充满激情的科研工作者。</p>
+                <p class="text-gray-600 max-w-2xl mx-auto">A dynamic team of passionate and dedicated researchers.</p>
             </div>
 
             <!-- PI 导师 -->
             <div class="mb-12">
-                <h3 class="text-2xl font-bold text-gray-800 mb-6 border-b pb-2">实验室负责人 (PI)</h3>
-                <div class="flex flex-col md:flex-row items-center md:items-start bg-white p-6 rounded-xl shadow-sm">
-                    <div class="w-32 h-32 flex-shrink-0 bg-gray-200 rounded-full overflow-hidden mb-4 md:mb-0 md:mr-6">
-                        <img src="https://ui-avatars.com/api/?name=W+W&background=random&size=128" alt="王教授" class="w-full h-full object-cover">
+                <h3 class="text-2xl font-bold text-gray-800 mb-6 border-b border-gray-300 pb-2">PI</h3>
+                <div class="flex flex-col md:flex-row items-center md:items-start bg-white p-6 rounded-xl shadow-sm border border-gray-200">
+                    <div class="w-32 h-32 flex-shrink-0 bg-gray-200 rounded-full overflow-hidden mb-4 md:mb-0 md:mr-6 shadow-inner">
+                        <img src="photo/qk.png" alt="Kun Qian" class="w-full h-full object-cover">
                     </div>
                     <div>
                         <h4 class="text-xl font-bold text-gray-900">Kun Qian</h4>
                         <p class="text-blue-600 mb-3">Professor</p>
                         <p class="text-gray-600 text-sm leading-relaxed mb-4">
-                            主要从事类脑计算、计算神经科学、机器学习等方面的研究。在国际顶级期刊和会议上发表论文 50 余篇。担任多个国际期刊的审稿人。
+                            Prof. Qian, a TUM alumnus and Teli Young Fellow Professor at BIT, is a distinguished IEEE Senior Member and Associate Editor of IEEE TAC who has been recognized as a Forbes China 100 Overseas Returnee and an MIT Technology Review Intelligent Computing Innovator.
                         </p>
-                        <a href="mailto:prof.wang@university.edu" class="text-gray-500 hover:text-blue-600"><i class="fa-regular fa-envelope mr-1"></i> prof.wang@university.edu</a>
+                        <a  class="text-gray-500 hover:text-blue-600"><i class="fa-regular fa-envelope mr-1"></i> qian@bit.edu.cn</a>
                     </div>
                 </div>
             </div>
 
+            <div class="text-center pt-4">
+                    <a href="team.html" class="text-blue-600 font-medium hover:underline">All team members &rarr;</a>
+                </div>
+
             <!-- 学生 -->
+            <!--
             <div>
-                <h3 class="text-2xl font-bold text-gray-800 mb-6 border-b pb-2">研究生团队</h3>
+                <h3 class="text-2xl font-bold text-gray-800 mb-6 border-b pb-2">Students</h3>
                 <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
-                    
+
                     <div class="bg-white p-4 rounded-xl shadow-sm hover:shadow-md transition">
                         <img src="https://ui-avatars.com/api/?name=Z+S&background=random" alt="张三" class="w-20 h-20 mx-auto rounded-full mb-3">
                         <h4 class="font-bold text-gray-900">Rui Wang</h4>
@@ -222,17 +276,17 @@
                         <h4 class="font-bold text-gray-900">Minghao Yan</h4>
                         <p class="text-xs text-gray-500">Master Student</p>
                     </div>
-                    
+
                     <div class="bg-white p-4 rounded-xl shadow-sm hover:shadow-md transition border border-dashed border-gray-300 flex flex-col justify-center items-center">
                         <div class="w-20 h-20 rounded-full bg-gray-50 flex items-center justify-center mb-3">
                             <i class="fa-solid fa-plus text-gray-400 text-2xl"></i>
                         </div>
-                        <h4 class="font-bold text-gray-900">虚位以待</h4>
-                        <p class="text-xs text-blue-600 font-medium">欢迎加入我们</p>
+                        <h4 class="font-bold text-gray-900">Waiting for you</h4>
+                        <p class="text-xs text-blue-600 font-medium">Welcom to join us</p>
                     </div>
 
                 </div>
-            </div>
+            </div>-->
         </div>
     </section>
 
@@ -241,23 +295,24 @@
         <div class="container mx-auto px-4 sm:px-6 lg:px-8">
             <div class="max-w-3xl mx-auto bg-blue-600 rounded-2xl shadow-xl overflow-hidden text-white flex flex-col md:flex-row">
                 <div class="p-8 md:w-full">
-                    <h2 class="text-3xl font-extrabold mb-4">联系我们 / 招生信息</h2>
+                    <h2 class="text-3xl font-extrabold mb-4">Contact us / Join us</h2>
                     <p class="text-blue-100 mb-8 leading-relaxed">
-                        我们常年招收对人工智能、脑科学交叉领域感兴趣的硕士、博士研究生以及博士后。欢迎有计算机、自动化、数学或生物医学工程背景的同学发送简历联系我们。
+                        We are always looking for passionate students and researchers to join us. Please feel free to reach out to us using the contact information below.
                     </p>
                     <div class="space-y-4">
                         <div class="flex items-start">
                             <i class="fa-solid fa-location-dot mt-1 mr-4 text-blue-200"></i>
                             <div>
-                                <h5 class="font-bold">实验室地址</h5>
-                                <p class="text-blue-100 text-sm">某某市某某区某某路1号<br>某某大学 计算机大楼 501室</p>
+                                <h5 class="font-bold">Address</h5>
+                                <p class="text-blue-100 text-sm">Floor 4, New Canteen (新食堂), Beijing Institute of Technology, <b>Beijing</b>, China.</p>
+                                <p class="text-blue-100 text-sm">Room TC211, Tianyou (天佑) Building, Beijing Institute of Technology, <b>Zhuhai</b>, China.</p>
                             </div>
                         </div>
                         <div class="flex items-start">
                             <i class="fa-solid fa-envelope mt-1 mr-4 text-blue-200"></i>
                             <div>
-                                <h5 class="font-bold">邮箱</h5>
-                                <p class="text-blue-100 text-sm">ibcc-lab@university.edu.cn</p>
+                                <h5 class="font-bold">E-mail</h5>
+                                <p class="text-blue-100 text-sm">wangrui59@bit.edu.cn, qian@bit.edu.cn</p>
                             </div>
                         </div>
                     </div>
@@ -270,11 +325,11 @@
     <footer class="bg-gray-900 text-gray-400 py-8">
         <div class="container mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center text-sm">
             <div class="mb-4 md:mb-0">
-                &copy; 2026 智能脑认知与计算实验室 (IBCC Lab). 保留所有权利.
+                &copy; 2026 BHE-AIM-BAC Lab. All rights reserved.
             </div>
             <div class="flex space-x-4">
-                <a href="#" class="hover:text-white transition"><i class="fa-brands fa-github text-xl"></i></a>
-                <a href="#" class="hover:text-white transition"><i class="fa-brands fa-twitter text-xl"></i></a>
+                <!--<a href="#" class="hover:text-white transition"><i class="fa-brands fa-github text-xl"></i></a>
+                <a href="#" class="hover:text-white transition"><i class="fa-brands fa-twitter text-xl"></i></a>-->
             </div>
         </div>
     </footer>
@@ -298,4 +353,3 @@
     </script>
 </body>
 </html>
-
