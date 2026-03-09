@@ -5,21 +5,48 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BHE-AIM-BAC</title>
     
+    <!-- 引入 Google Fonts: Inter 与 Roboto -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- 引入 Inter (标题用) 与 Roboto (内文用) -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+
     <!-- 添加浏览器标签页图标 (Favicon) -->
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🧠</text></svg>">
 
-    <!-- 引入 Tailwind CSS 用于快速美化网页 -->
+    <!-- 引入 Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- 配置 Tailwind 的字体家族 -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Roboto"', 'sans-serif'],
+                        heading: ['"Inter"', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
     <!-- 引入 FontAwesome 图标库 -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        /* 添加平滑滚动效果 */
         html {
             scroll-behavior: smooth;
         }
+        /* 强制套用 Roboto 到所有正文、段落和标签 */
+        body, p, a, span, li, div {
+            font-family: 'Roboto', sans-serif !important;
+        }
+        /* 强制将所有标题设定为 Inter 字体，并稍微收紧字距增加现代感 */
+        h1, h2, h3, h4, h5, h6, .font-heading {
+            font-family: 'Inter', sans-serif !important;
+            letter-spacing: -0.015em;
+        }
     </style>
 </head>
-<body class="bg-gray-50 text-gray-800 font-sans antialiased">
+<body class="bg-gray-50 text-gray-800 font-sans antialiased flex flex-col min-h-screen">
 
     <!-- 导航栏 -->
     <header class="bg-white shadow-md fixed w-full z-50 top-0">
@@ -28,12 +55,12 @@
                 <!-- 实验室 Logo / 名称 -->
                 <div class="flex-shrink-0 flex items-center">
                     <i class="fa-solid fa-brain text-blue-600 text-2xl mr-2"></i>
-                    <a href="index.html" class="text-xl font-bold text-gray-900">BHE-AIM-BAC</a>
+                    <a href="index.html" class="text-xl font-bold font-heading text-gray-900">BHE-AIM-BAC</a>
                 </div>
-                
+
                 <!-- 桌面端菜单 -->
                 <nav class="hidden md:flex space-x-8">
-                    <a href="index.html" class="text-gray-600 hover:text-blue-600 transition duration-300">Home</a>
+                    <a href="index.html" class="text-blue-600 font-bold border-b-2 border-blue-600 pb-1 transition duration-300">Home</a>
                     <a href="research.html" class="text-gray-600 hover:text-blue-600 transition duration-300">Research</a>
                     <a href="publications.html" class="text-gray-600 hover:text-blue-600 transition duration-300">Publications</a>
                     <a href="team.html" class="text-gray-600 hover:text-blue-600 transition duration-300">Team</a>
@@ -52,7 +79,7 @@
         <!-- 移动端下拉菜单 -->
         <div id="mobile-menu" class="hidden md:hidden bg-white border-t">
             <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-                <a href="index.html" class="block px-3 py-2 text-gray-600 hover:text-blue-600 hover:bg-gray-50 rounded-md">Home</a>
+                <a href="index.html" class="block px-3 py-2 text-blue-600 bg-blue-50 font-bold rounded-md">Home</a>
                 <a href="research.html" class="block px-3 py-2 text-gray-600 hover:text-blue-600 hover:bg-gray-50 rounded-md">Research</a>
                 <a href="publications.html" class="block px-3 py-2 text-gray-600 hover:text-blue-600 hover:bg-gray-50 rounded-md">Publications</a>
                 <a href="team.html" class="block px-3 py-2 text-gray-600 hover:text-blue-600 hover:bg-gray-50 rounded-md">Team</a>
@@ -61,275 +88,271 @@
         </div>
     </header>
 
-        <!-- 主视觉区 (Hero Section) -->
-    <section id="home" class="pt-24 pb-12 md:pt-32 md:pb-24 bg-blue-50">
-        <div class="container mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center">
-            <div class="md:w-1/2 md:pr-10 mb-10 md:mb-0">
-                <h1 class="text-5xl md:text-6xl font-black text-gray-900 leading-tight mb-2 tracking-tight uppercase">
-                    WELCOME TO BAC
-                </h1>
-                <h2 class="text-2xl md:text-3xl font-bold text-blue-600 mb-8">
-                    Brain-inspired Auditory Computation
-                </h2>
+    <!-- 主视觉区 (Hero Section) -->
+    <main class="flex-grow">
+        <section id="home" class="pt-24 pb-12 md:pt-32 md:pb-24 bg-blue-50">
+            <!-- 使用 md:items-stretch 让左右等高对齐 -->
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row md:items-stretch">
+                <!-- 左侧文字区 -->
+                <div class="md:w-1/2 md:pr-10 mb-10 md:mb-0 flex flex-col justify-between py-2">
+                    <div>
+                        <h1 class="text-5xl md:text-6xl font-black text-gray-900 leading-tight mb-2 tracking-tight uppercase font-heading">
+                            WELCOME TO BAC
+                        </h1>
+                        <h2 class="text-2xl md:text-3xl font-bold text-blue-600 mb-8 font-heading">
+                            Brain-inspired Auditory Computation
+                        </h2>
 
-                <div class="space-y-5 text-gray-600 leading-relaxed mb-10">
-                    <p class="font-bold text-gray-800 text-xl">
-                        Welcome to the BHE-AIM-BAC website!
-                    </p>
+                        <div class="space-y-5 text-gray-600 leading-relaxed mb-10">
+                            <p class="font-bold text-gray-800 text-xl font-heading">
+                                Welcome to the BHE-AIM-BAC website!
+                            </p>
 
-                    <!-- 高亮區塊 -->
-                    <div class="border-l-4 border-blue-500 pl-4 py-3 bg-white/60 rounded-r-lg shadow-sm">
-                        <p class="text-base text-gray-700">
-                            Affiliated with the <span class="font-semibold text-blue-700">Key Laboratory of Brain Health Intelligent Evaluation and Intervention (Ministry of Education)</span>, our lab operates at the cutting-edge intersection of medicine and engineering.
+                            <!-- 高亮区块 -->
+                            <div class="border-l-4 border-blue-500 pl-4 py-3 bg-white/60 rounded-r-lg shadow-sm">
+                            <p class="text-base text-gray-700"> Affiliated with the
+                                <span class="font-semibold text-blue-700">
+                                    <a href="https://bhelaborg.wpcomstaging.com/en/" target="_blank" class="hover:underline">
+                                        Key Laboratory of Brain Health Intelligent Evaluation and Intervention (Ministry of Education)
+                                    </a>
+                                </span>,
+                                our lab operates at the cutting-edge intersection of medicine and engineering.
+                            </p>
+                            </div>
+
+                            <p class="text-base md:text-lg">
+                                We are dedicated to advancing brain health research through the lens of brain-inspired auditory computation. We invite visitors from all disciplines to explore our research achievements and meet our team.
+                            </p>
+                            <p class="text-base md:text-lg">
+                                We look forward to collaborating with you to push the boundaries of neural science and intelligent technology.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="flex space-x-4 mt-auto">
+                        <a href="research.html" class="bg-blue-600 text-white px-8 py-3 rounded-md font-bold hover:bg-blue-700 transition duration-300 shadow-md">Our Research</a>
+                        <a href="contact.html" class="bg-white text-blue-600 border-2 border-blue-600 px-8 py-3 rounded-md font-bold hover:bg-blue-50 transition duration-300">Join Us</a>
+                    </div>
+                </div>
+
+                <!-- 右侧图片区：使用 relative 和 md:absolute 实现完美等高拉伸 -->
+                <div class="md:w-1/2 relative min-h-[350px] sm:min-h-[450px] md:min-h-0 rounded-xl overflow-hidden shadow-2xl">
+                    <img src="fig/img.png" alt="research" class="w-full h-full object-cover md:absolute md:inset-0">
+                </div>
+            </div>
+        </section>
+
+        <!-- 新闻动态 (News) -->
+        <section class="py-16 bg-white">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <!-- 标题居中，与全站风格统一 -->
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-extrabold text-gray-900 mb-4 font-heading">News</h2>
+                    <p class="text-gray-600 max-w-2xl mx-auto">Stay updated with our latest research breakthroughs and lab events.</p>
+                </div>
+
+                <div class="max-w-4xl mx-auto space-y-6">
+                    <!-- News Item 1 -->
+                    <div class="flex flex-col sm:flex-row bg-white rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition-all duration-300 overflow-hidden group cursor-default">
+                        <!-- 左侧日期区块 -->
+                        <div class="bg-blue-50/50 sm:w-32 flex-shrink-0 flex flex-col justify-center items-center py-5 px-2 border-b sm:border-b-0 sm:border-r border-gray-100 group-hover:bg-blue-600 transition-colors duration-500">
+                            <span class="text-3xl font-black text-blue-600 group-hover:text-white transition-colors duration-500 font-heading">15</span>
+                            <span class="text-xs font-bold text-gray-500 uppercase tracking-widest group-hover:text-blue-100 mt-1 transition-colors duration-500">2026.Jan</span>
+                        </div>
+                        <!-- 右侧内容 -->
+                        <div class="p-6 md:p-8 flex items-center w-full">
+                            <p class="text-gray-700 text-base md:text-lg leading-relaxed">
+                                🎉Congratulations to <b>Yang Tan</b> and <b>Haojie Zhang</b> on their latest research publication in <b>EAAI</b>！🎉
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- News Item 2 -->
+                    <div class="flex flex-col sm:flex-row bg-white rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition-all duration-300 overflow-hidden group cursor-default">
+                        <!-- 左侧日期区块 -->
+                        <div class="bg-blue-50/50 sm:w-32 flex-shrink-0 flex flex-col justify-center items-center py-5 px-2 border-b sm:border-b-0 sm:border-r border-gray-100 group-hover:bg-blue-600 transition-colors duration-500">
+                            <span class="text-3xl font-black text-blue-600 group-hover:text-white transition-colors duration-500 font-heading">28 </span>
+                            <span class="text-xs font-bold text-gray-500 uppercase tracking-widest group-hover:text-blue-100 mt-1 transition-colors duration-500">2025.Nov</span>
+                        </div>
+                        <!-- 右侧内容 -->
+                        <div class="p-6 md:p-8 flex items-center w-full">
+                            <p class="text-gray-700 text-base md:text-lg leading-relaxed">
+                                🎉Congratulations to <b>Zhihua Wang</b> and <b>Haojie Zhang</b> on their latest research publication in <b>IEEE JBHI</b>！🎉
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- News Item 3 -->
+                    <div class="flex flex-col sm:flex-row bg-white rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition-all duration-300 overflow-hidden group cursor-default">
+                        <!-- 左侧日期区块 -->
+                        <div class="bg-blue-50/50 sm:w-32 flex-shrink-0 flex flex-col justify-center items-center py-5 px-2 border-b sm:border-b-0 sm:border-r border-gray-100 group-hover:bg-blue-600 transition-colors duration-500">
+                            <span class="text-3xl font-black text-blue-600 group-hover:text-white transition-colors duration-500 font-heading">1 </span>
+                            <span class="text-xs font-bold text-gray-500 uppercase tracking-widest group-hover:text-blue-100 mt-1 transition-colors duration-500">2025.Sep</span>
+                        </div>
+                        <!-- 右侧内容 -->
+                        <div class="p-6 md:p-8 flex items-center w-full">
+                            <p class="text-gray-700 text-base md:text-lg leading-relaxed">
+                                🎊Congratulations on the team establishment of the <b>BAC</b>! 🎊
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- 研究方向 (Research) (已加深背景色为 bg-gray-100) -->
+        <section id="research" class="py-16 bg-gray-100">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-extrabold text-gray-900 mb-4 font-heading">Research</h2>
+                    <p class="text-gray-600 max-w-2xl mx-auto">Grounded in interdisciplinary research, we conduct frontier exploration in the following core areas.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <!-- 研究方向 1 -->
+                    <div class="bg-white rounded-xl shadow-sm overflow-hidden border border-gray-200 hover:shadow-lg transition duration-300">
+                        <img src="fig/bac.png" alt="bac" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-gray-900 mb-2 font-heading">Brain-inspired Computer Audition</h3>
+                            <p class="text-gray-600 mb-4 text-sm leading-relaxed">
+                                Developing biomimetic auditory models for robust speech processing in healthcare and emotion recognition.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- 研究方向 2 -->
+                    <div class="bg-white rounded-xl shadow-sm overflow-hidden border border-gray-200 hover:shadow-lg transition duration-300">
+                        <img src="fig/snn.png" alt="snn" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-gray-900 mb-2 font-heading">Spiking Neural Networks </h3>
+                            <p class="text-gray-600 mb-4 text-sm leading-relaxed">
+                                We leverage these advanced SNNs architectures to achieve ultra-low-power processing for long-term brain health monitoring and robust auditory perception.
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+                <br>
+                <div class="text-center pt-4">
+                        <a href="research.html" class="text-blue-600 font-medium hover:underline">All research directions &rarr;</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- 学术成果 (Publications) -->
+        <section id="publications" class="py-16 bg-white">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-3xl font-extrabold text-gray-900 mb-10 text-center font-heading">Publications</h2>
+                <div class="max-w-4xl mx-auto space-y-6">
+
+                    <!-- 论文 2 -->
+                    <div class="border-b border-gray-200 pb-6">
+                        <a href="https://www.sciencedirect.com/science/article/abs/pii/S0952197625031963" class="text-lg font-bold text-gray-900 mb-1 hover:text-blue-600 cursor-pointer font-heading">
+                            BBANet: Bilateral biological auditory-inspired neural network for heart sound classification
+                        </a>
+                        <p class="text-gray-600 text-sm mb-2 mt-1">
+                            Yang Tan, Haojie Zhang, Jingwen Xu, Hanhan Wu, Kun Qian, Bin Hu, Yoshiharu Yamamoto, Björn W. Schuller.<br>
+                            <span class="italic">Engineering Applications of Artificial Intelligence</span>, 2026.
                         </p>
+                        <div class="flex space-x-3">
+                            <a href="https://www.sciencedirect.com/science/article/abs/pii/S0952197625031963" class="text-xs bg-blue-100 text-blue-700 px-2 py-1 rounded hover:bg-blue-200">PDF</a>
+                        </div>
                     </div>
 
-                    <p class="text-base md:text-lg">
-                        We are dedicated to advancing brain health research through the lens of brain-inspired auditory computation. We invite visitors from all disciplines to explore our research achievements and meet our team.
-                    </p>
-                    <p class="text-base md:text-lg">
-                        We look forward to collaborating with you to push the boundaries of neural science and intelligent technology.
-                    </p>
-                </div>
-
-                <div class="flex space-x-4">
-                    <a href="research.html" class="bg-blue-600 text-white px-8 py-3 rounded-md font-bold hover:bg-blue-700 transition duration-300 shadow-md">Our research</a>
-                    <a href="contact.html" class="bg-white text-blue-600 border-2 border-blue-600 px-8 py-3 rounded-md font-bold hover:bg-blue-50 transition duration-300">Join us</a>
-                </div>
-            </div>
-            <div class="md:w-1/2">
-                <!-- 占位图片，可以替换为真实的实验室照片 -->
-                <img src="https://images.unsplash.com/photo-1532094349884-543bc11b234d?auto=format&fit=crop&q=80&w=1000" alt="实验室显微镜和科研环境" class="rounded-xl shadow-2xl w-full object-cover h-64 md:h-96">
-            </div>
-        </div>
-    </section>
-
-<!-- 新闻动态 (News) -->
-    <section class="py-16 bg-white">
-        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-            <!-- 标题居中，与全站风格统一 -->
-            <div class="text-center mb-12">
-                <h2 class="text-3xl font-extrabold text-gray-900 mb-4">News</h2>
-                <p class="text-gray-600 max-w-2xl mx-auto">Stay updated with our latest research breakthroughs and lab events.</p>
-            </div>
-
-            <div class="max-w-4xl mx-auto space-y-6">
-                <!-- News Item 1 -->
-                <div class="flex flex-col sm:flex-row bg-white rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition-all duration-300 overflow-hidden group cursor-default">
-                    <!-- 左侧日期区块 -->
-                    <div class="bg-blue-50/50 sm:w-32 flex-shrink-0 flex flex-col justify-center items-center py-5 px-2 border-b sm:border-b-0 sm:border-r border-gray-100 group-hover:bg-blue-600 transition-colors duration-500">
-                        <span class="text-3xl font-black text-blue-600 group-hover:text-white transition-colors duration-500">03</span>
-                        <span class="text-xs font-bold text-gray-500 uppercase tracking-widest group-hover:text-blue-100 mt-1 transition-colors duration-500">2026.Mar</span>
-                    </div>
-                    <!-- 右侧内容 -->
-                    <div class="p-6 md:p-8 flex items-center w-full">
-                        <p class="text-gray-700 text-base md:text-lg leading-relaxed">
-                            🎉 恭喜实验室团队在 <strong class="text-gray-900">Nature</strong> 上发表关于脉冲神经网络的新研究！
+                    <!-- 论文 1 -->
+                    <div class="border-b border-gray-200 pb-6">
+                        <a href="https://ieeexplore.ieee.org/abstract/document/11271376" class="text-lg font-bold text-gray-900 mb-1 hover:text-blue-600 cursor-pointer font-heading">
+                            Can Information Representations Inspired by the Human Auditory Perception Benefit Computer Audition-based Disease Detection? An Interpretable Comparative Study
+                        </a>
+                        <p class="text-gray-600 text-sm mb-2 mt-1">
+                            Zhihua Wang, Haojie Zhang, Yang Tan, Rui Wang, Kun Qian, Bin Hu, Yoshiharu Yamamoto, and Björn W. Schuller.<br>
+                            <span class="italic">IEEE Journal of Biomedical and Health Informatics</span>, 2025.
                         </p>
+                        <div class="flex space-x-3">
+                            <a href="https://ieeexplore.ieee.org/abstract/document/11271376" class="text-xs bg-blue-100 text-blue-700 px-2 py-1 rounded hover:bg-blue-200">PDF</a>
+                        </div>
                     </div>
-                </div>
 
-                <!-- News Item 2 -->
-                <div class="flex flex-col sm:flex-row bg-white rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition-all duration-300 overflow-hidden group cursor-default">
-                    <!-- 左侧日期区块 -->
-                    <div class="bg-blue-50/50 sm:w-32 flex-shrink-0 flex flex-col justify-center items-center py-5 px-2 border-b sm:border-b-0 sm:border-r border-gray-100 group-hover:bg-blue-600 transition-colors duration-500">
-                        <span class="text-3xl font-black text-blue-600 group-hover:text-white transition-colors duration-500">12</span>
-                        <span class="text-xs font-bold text-gray-500 uppercase tracking-widest group-hover:text-blue-100 mt-1 transition-colors duration-500">2025.Dec</span>
-                    </div>
-                    <!-- 右侧内容 -->
-                    <div class="p-6 md:p-8 flex items-center w-full">
-                        <p class="text-gray-700 text-base md:text-lg leading-relaxed">
-                            🔬 实验室获批国家自然科学基金重点项目一项，致力于多模态脑电信号处理。
-                        </p>
+                    <div class="text-center pt-4">
+                        <a href="publications.html" class="text-blue-600 font-medium hover:underline">All publications &rarr;</a>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- 研究方向 (Research) (已加深背景色为 bg-gray-100) -->
-    <section id="research" class="py-16 bg-gray-100">
-        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl font-extrabold text-gray-900 mb-4">Research</h2>
-                <p class="text-gray-600 max-w-2xl mx-auto">Grounded in interdisciplinary research, we conduct frontier exploration in the following core areas.</p>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <!-- 研究方向 1 -->
-                <div class="bg-white rounded-xl shadow-sm overflow-hidden border border-gray-200 hover:shadow-lg transition duration-300">
-                    <img src="https://images.unsplash.com/photo-1559757175-5700dde675bc?auto=format&fit=crop&q=80&w=800" alt="脑电信号分析" class="w-full h-48 object-cover">
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold text-gray-900 mb-2">脑电图 (EEG) 与情感识别</h3>
-                        <p class="text-gray-600 mb-4 text-sm leading-relaxed">
-                            基于非侵入式脑电采集技术，结合深度学习算法，实现对抑郁症、焦虑症等情绪障碍的客观生理指标检测与早期预警。
-                        </p>
-                    </div>
+        <!-- 团队成员 (Team) -->
+        <section id="team" class="py-16 bg-gray-100">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-extrabold text-gray-900 mb-4 font-heading">Team</h2>
+                    <p class="text-gray-600 max-w-2xl mx-auto">A dynamic team of passionate and dedicated researchers.</p>
                 </div>
 
-                <!-- 研究方向 2 -->
-                <div class="bg-white rounded-xl shadow-sm overflow-hidden border border-gray-200 hover:shadow-lg transition duration-300">
-                    <img src="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&q=80&w=800" alt="类脑计算" class="w-full h-48 object-cover">
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold text-gray-900 mb-2">脉冲神经网络 (SNNs)</h3>
-                        <p class="text-gray-600 mb-4 text-sm leading-relaxed">
-                            模拟生物神经元的脉冲发放机制，研发低功耗、高效率的第三代人工神经网络，并探索其在边缘计算设备上的硬件部署。
-                        </p>
-                    </div>
-                </div>
-
-
-            </div>
-            <br>
-            <div class="text-center pt-4">
-                    <a href="research.html" class="text-blue-600 font-medium hover:underline">All research directions &rarr;</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- 学术成果 (Publications) -->
-    <section id="publications" class="py-16 bg-white">
-        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-3xl font-extrabold text-gray-900 mb-10 text-center">Publications</h2>
-            <div class="max-w-4xl mx-auto space-y-6">
-
-                <!-- 论文 2 -->
-                <div class="border-b border-gray-200 pb-6">
-                    <h4 class="text-lg font-bold text-gray-900 mb-1 hover:text-blue-600 cursor-pointer">
-                        BBANet: Bilateral biological auditory-inspired neural network for heart sound classification
-                    </h4>
-                    <p class="text-gray-600 text-sm mb-2">
-                        Yang Tan, Haojie Zhang, Jingwen Xu, Hanhan Wu, Kun Qian, Bin Hu, Yoshiharu Yamamoto, Björn W. Schuller.<br>
-                        <span class="italic">Engineering Applications of Artificial Intelligence</span>, 2026.
-                    </p>
-                    <div class="flex space-x-3">
-                        <a href="https://www.sciencedirect.com/science/article/abs/pii/S0952197625031963" class="text-xs bg-blue-100 text-blue-700 px-2 py-1 rounded hover:bg-blue-200">PDF</a>
-                        <!--<a href="#" class="text-xs bg-gray-100 text-gray-700 px-2 py-1 rounded hover:bg-gray-200">DOI</a>-->
-                    </div>
-                </div>
-
-                <!-- 论文 1 -->
-                <div class="border-b border-gray-200 pb-6">
-                    <h4 class="text-lg font-bold text-gray-900 mb-1 hover:text-blue-600 cursor-pointer">
-                        Can Information Representations Inspired by the Human Auditory Perception Benefit Computer Audition-based Disease Detection? An Interpretable Comparative Study
-                    </h4>
-                    <p class="text-gray-600 text-sm mb-2">
-                        Zhihua Wang, Haojie Zhang, Yang Tan, Rui Wang, Kun Qian, Bin Hu, Yoshiharu Yamamoto, and Björn W. Schuller.<br>
-                        <span class="italic">IEEE Journal of Biomedical and Health Informatics</span>, 2025.
-                    </p>
-                    <div class="flex space-x-3">
-                        <a href="https://ieeexplore.ieee.org/abstract/document/11271376" class="text-xs bg-blue-100 text-blue-700 px-2 py-1 rounded hover:bg-blue-200">PDF</a>
+                <!-- PI 导师 -->
+                <div class="mb-12">
+                    <h3 class="text-2xl font-bold text-gray-800 mb-6 border-b border-gray-300 pb-2 font-heading">PI</h3>
+                    <div class="flex flex-col md:flex-row items-center md:items-start bg-white p-6 rounded-xl shadow-sm border border-gray-200">
+                        <div class="w-32 h-32 flex-shrink-0 bg-gray-200 rounded-full overflow-hidden mb-4 md:mb-0 md:mr-6 shadow-inner">
+                            <img src="photo/qk.png" alt="Kun Qian" class="w-full h-full object-cover">
+                        </div>
+                        <div>
+                            <h4 class="text-xl font-bold text-gray-900 font-heading">Kun Qian</h4>
+                            <p class="text-blue-600 mb-3">Professor</p>
+                            <p class="text-gray-600 text-sm leading-relaxed mb-4">
+                                Prof. Qian, a TUM alumnus and Teli Young Fellow Professor at BIT, is a distinguished IEEE Senior Member and Associate Editor of IEEE TAC who has been recognized as a Forbes China 100 Overseas Returnee and an MIT Technology Review Intelligent Computing Innovator.
+                            </p>
+                            <a class="text-gray-500"><i class="fa-regular fa-envelope mr-1"></i> qian@bit.edu.cn</a>
+                        </div>
                     </div>
                 </div>
 
                 <div class="text-center pt-4">
-                    <a href="publications.html" class="text-blue-600 font-medium hover:underline">All publications &rarr;</a>
+                        <a href="team.html" class="text-blue-600 font-medium hover:underline">All team members &rarr;</a>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- 团队成员 (Team) (已加深背景色为 bg-gray-100) -->
-    <section id="team" class="py-16 bg-gray-100">
-        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl font-extrabold text-gray-900 mb-4">Team</h2>
-                <p class="text-gray-600 max-w-2xl mx-auto">A dynamic team of passionate and dedicated researchers.</p>
-            </div>
-
-            <!-- PI 导师 -->
-            <div class="mb-12">
-                <h3 class="text-2xl font-bold text-gray-800 mb-6 border-b border-gray-300 pb-2">PI</h3>
-                <div class="flex flex-col md:flex-row items-center md:items-start bg-white p-6 rounded-xl shadow-sm border border-gray-200">
-                    <div class="w-32 h-32 flex-shrink-0 bg-gray-200 rounded-full overflow-hidden mb-4 md:mb-0 md:mr-6 shadow-inner">
-                        <img src="photo/qk.png" alt="Kun Qian" class="w-full h-full object-cover">
-                    </div>
-                    <div>
-                        <h4 class="text-xl font-bold text-gray-900">Kun Qian</h4>
-                        <p class="text-blue-600 mb-3">Professor</p>
-                        <p class="text-gray-600 text-sm leading-relaxed mb-4">
-                            Prof. Qian, a TUM alumnus and Teli Young Fellow Professor at BIT, is a distinguished IEEE Senior Member and Associate Editor of IEEE TAC who has been recognized as a Forbes China 100 Overseas Returnee and an MIT Technology Review Intelligent Computing Innovator.
+        <!-- 联系我们 (Contact) -->
+        <section id="contact" class="py-16 bg-white">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="max-w-3xl mx-auto bg-blue-600 rounded-2xl shadow-xl overflow-hidden text-white flex flex-col md:flex-row">
+                    <div class="p-8 md:w-full">
+                        <h2 class="text-3xl font-extrabold mb-4 font-heading">Contact us / Join us</h2>
+                        <p class="text-blue-100 mb-8 leading-relaxed">
+                            We are always looking for passionate students and researchers to join us. Please feel free to reach out to us using the contact information below.
                         </p>
-                        <a  class="text-gray-500 hover:text-blue-600"><i class="fa-regular fa-envelope mr-1"></i> qian@bit.edu.cn</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="text-center pt-4">
-                    <a href="team.html" class="text-blue-600 font-medium hover:underline">All team members &rarr;</a>
-                </div>
-
-            <!-- 学生 -->
-            <!--
-            <div>
-                <h3 class="text-2xl font-bold text-gray-800 mb-6 border-b pb-2">Students</h3>
-                <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
-
-                    <div class="bg-white p-4 rounded-xl shadow-sm hover:shadow-md transition">
-                        <img src="https://ui-avatars.com/api/?name=Z+S&background=random" alt="张三" class="w-20 h-20 mx-auto rounded-full mb-3">
-                        <h4 class="font-bold text-gray-900">Rui Wang</h4>
-                        <p class="text-xs text-gray-500">PhD Student</p>
-                    </div>
-
-                    <div class="bg-white p-4 rounded-xl shadow-sm hover:shadow-md transition">
-                        <img src="https://ui-avatars.com/api/?name=L+S&background=random" alt="李四" class="w-20 h-20 mx-auto rounded-full mb-3">
-                        <h4 class="font-bold text-gray-900">Minghao Yan</h4>
-                        <p class="text-xs text-gray-500">Master Student</p>
-                    </div>
-
-                    <div class="bg-white p-4 rounded-xl shadow-sm hover:shadow-md transition border border-dashed border-gray-300 flex flex-col justify-center items-center">
-                        <div class="w-20 h-20 rounded-full bg-gray-50 flex items-center justify-center mb-3">
-                            <i class="fa-solid fa-plus text-gray-400 text-2xl"></i>
-                        </div>
-                        <h4 class="font-bold text-gray-900">Waiting for you</h4>
-                        <p class="text-xs text-blue-600 font-medium">Welcom to join us</p>
-                    </div>
-
-                </div>
-            </div>-->
-        </div>
-    </section>
-
-    <!-- 联系我们 (Contact) -->
-    <section id="contact" class="py-16 bg-white">
-        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="max-w-3xl mx-auto bg-blue-600 rounded-2xl shadow-xl overflow-hidden text-white flex flex-col md:flex-row">
-                <div class="p-8 md:w-full">
-                    <h2 class="text-3xl font-extrabold mb-4">Contact us / Join us</h2>
-                    <p class="text-blue-100 mb-8 leading-relaxed">
-                        We are always looking for passionate students and researchers to join us. Please feel free to reach out to us using the contact information below.
-                    </p>
-                    <div class="space-y-4">
-                        <div class="flex items-start">
-                            <i class="fa-solid fa-location-dot mt-1 mr-4 text-blue-200"></i>
-                            <div>
-                                <h5 class="font-bold">Address</h5>
-                                <p class="text-blue-100 text-sm">Floor 4, New Canteen (新食堂), Beijing Institute of Technology, <b>Beijing</b>, China.</p>
-                                <p class="text-blue-100 text-sm">Room TC211, Tianyou (天佑) Building, Beijing Institute of Technology, <b>Zhuhai</b>, China.</p>
+                        <div class="space-y-4">
+                            <div class="flex items-start">
+                                <i class="fa-solid fa-location-dot mt-1 mr-4 text-blue-200"></i>
+                                <div>
+                                    <h5 class="font-bold font-heading">Address</h5>
+                                    <p class="text-blue-100 text-sm">Floor 4, New Canteen (新食堂), Beijing Institute of Technology, <b>Beijing</b>, China.</p>
+                                    <p class="text-blue-100 text-sm">Room TC211, Tianyou (天佑) Building, Beijing Institute of Technology, <b>Zhuhai</b>, China.</p>
+                                </div>
                             </div>
-                        </div>
-                        <div class="flex items-start">
-                            <i class="fa-solid fa-envelope mt-1 mr-4 text-blue-200"></i>
-                            <div>
-                                <h5 class="font-bold">E-mail</h5>
-                                <p class="text-blue-100 text-sm">wangrui59@bit.edu.cn, qian@bit.edu.cn</p>
+                            <div class="flex items-start">
+                                <i class="fa-solid fa-envelope mt-1 mr-4 text-blue-200"></i>
+                                <div>
+                                    <h5 class="font-bold font-heading">E-mail</h5>
+                                    <p class="text-blue-100 text-sm">wangrui59@bit.edu.cn, qian@bit.edu.cn</p>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+    </main>
 
     <!-- 页脚 -->
-    <footer class="bg-gray-900 text-gray-400 py-8">
+    <footer class="bg-gray-900 text-gray-400 py-8 mt-auto">
         <div class="container mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center text-sm">
-            <div class="mb-4 md:mb-0">
+            <div class="mb-4 md:mb-0 font-medium">
                 &copy; 2026 BHE-AIM-BAC Lab. All rights reserved.
             </div>
             <div class="flex space-x-4">
-                <!--<a href="#" class="hover:text-white transition"><i class="fa-brands fa-github text-xl"></i></a>
-                <a href="#" class="hover:text-white transition"><i class="fa-brands fa-twitter text-xl"></i></a>-->
+                <!-- 保留供以后使用的社交图标插槽 -->
             </div>
         </div>
     </footer>

@@ -1,46 +1,73 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Research - BHE-AIM-BAC</title>
 
-    <!-- 添加浏览器标签页图标 (Favicon) -->
+    <!-- 引入 Google Fonts: Inter 與 Roboto -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- 引入 Inter (標題用) 與 Roboto (內文用) -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+    <!-- 瀏覽器標籤頁圖示 (Favicon) -->
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🧠</text></svg>">
 
-    <!-- 引入 Tailwind CSS 用于快速美化网页 -->
+    <!-- 引入 Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- 引入 FontAwesome 图标库 -->
+    <!-- 配置 Tailwind 的字體家族 -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Roboto"', 'sans-serif'],
+                        heading: ['"Inter"', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- 引入 FontAwesome 圖示庫 -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        /* 添加平滑滚动效果 */
         html {
             scroll-behavior: smooth;
         }
+        /* 強制套用 Roboto 到所有正文、段落和標籤 */
+        body, p, a, span, li, div {
+            font-family: 'Roboto', sans-serif !important;
+        }
+        /* 強制將所有標題設定為 Inter 字體，並稍微收緊字距增加現代感 */
+        h1, h2, h3, h4, h5, h6, .font-heading {
+            font-family: 'Inter', sans-serif !important;
+            letter-spacing: -0.015em;
+        }
     </style>
 </head>
-<body class="bg-gray-50 text-gray-800 font-sans antialiased">
+<body class="bg-gray-50 text-gray-800 font-sans antialiased flex flex-col min-h-screen">
 
-    <!-- 导航栏 (与主页保持一致，但高亮当前页) -->
+    <!-- 導航欄 -->
     <header class="bg-white shadow-md fixed w-full z-50 top-0">
         <div class="container mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-16">
-                <!-- 实验室 Logo / 名称 -->
+                <!-- 實驗室 Logo / 名稱 -->
                 <div class="flex-shrink-0 flex items-center">
                     <i class="fa-solid fa-brain text-blue-600 text-2xl mr-2"></i>
-                    <a href="index.html" class="text-xl font-bold text-gray-900">BHE-AIM-BAC</a>
+                    <a href="index.html" class="text-xl font-bold font-heading text-gray-900">BHE-AIM-BAC</a>
                 </div>
 
-                <!-- 桌面端菜单 -->
+                <!-- 桌面端選單 -->
                 <nav class="hidden md:flex space-x-8">
-                    <a href="index.html" class="text-gray-600 hover:text-blue-600 transition duration-300">Home</a>
+                    <a href="index.html" class="text-gray-600 hover:text-blue-600 transition duration-300 font-medium">Home</a>
                     <a href="research.html" class="text-blue-600 font-bold border-b-2 border-blue-600 pb-1">Research</a>
-                    <a href="publications.html" class="text-gray-600 hover:text-blue-600 transition duration-300">Publications</a>
-                    <a href="team.html" class="text-gray-600 hover:text-blue-600 transition duration-300">Team</a>
-                    <a href="contact.html" class="text-gray-600 hover:text-blue-600 transition duration-300">Contact us</a>
+                    <a href="publications.html" class="text-gray-600 hover:text-blue-600 transition duration-300 font-medium">Publications</a>
+                    <a href="team.html" class="text-gray-600 hover:text-blue-600 transition duration-300 font-medium">Team</a>
+                    <a href="contact.html" class="text-gray-600 hover:text-blue-600 transition duration-300 font-medium">Contact us</a>
                 </nav>
 
-                <!-- 移动端菜单按钮 -->
+                <!-- 行動端選單按鈕 -->
                 <div class="md:hidden flex items-center">
                     <button id="mobile-menu-btn" class="text-gray-600 hover:text-gray-900 focus:outline-none">
                         <i class="fa-solid fa-bars text-2xl"></i>
@@ -49,100 +76,109 @@
             </div>
         </div>
 
-        <!-- 移动端下拉菜单 -->
+        <!-- 行動端下拉選單 -->
         <div id="mobile-menu" class="hidden md:hidden bg-white border-t">
             <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-                <a href="index.html" class="block px-3 py-2 text-gray-600 hover:text-blue-600 hover:bg-gray-50 rounded-md">Home</a>
+                <a href="index.html" class="block px-3 py-2 text-gray-600 hover:text-blue-600 hover:bg-gray-50 rounded-md font-medium">Home</a>
                 <a href="research.html" class="block px-3 py-2 text-blue-600 bg-blue-50 font-bold rounded-md">Research</a>
-                <a href="publications.html" class="block px-3 py-2 text-gray-600 hover:text-blue-600 hover:bg-gray-50 rounded-md">Publications</a>
-                <a href="team.html" class="block px-3 py-2 text-gray-600 hover:text-blue-600 hover:bg-gray-50 rounded-md">Team</a>
-                <a href="contact.html" class="block px-3 py-2 text-gray-600 hover:text-blue-600 hover:bg-gray-50 rounded-md">Contact us</a>
+                <a href="publications.html" class="block px-3 py-2 text-gray-600 hover:text-blue-600 hover:bg-gray-50 rounded-md font-medium">Publications</a>
+                <a href="team.html" class="block px-3 py-2 text-gray-600 hover:text-blue-600 hover:bg-gray-50 rounded-md font-medium">Team</a>
+                <a href="contact.html" class="block px-3 py-2 text-gray-600 hover:text-blue-600 hover:bg-gray-50 rounded-md font-medium">Contact us</a>
             </div>
         </div>
     </header>
 
-    <!-- 页面标题横幅 -->
-    <div class="pt-24 pb-10 bg-blue-600 text-white text-center">
-        <h1 class="text-4xl font-extrabold mb-4">研究方向与内容</h1>
-        <p class="text-lg text-blue-100 max-w-2xl mx-auto px-4">
-            立足于交叉学科前沿，致力于在脑机接口、类脑计算与医学人工智能领域取得突破性进展。
+    <!-- 頁面標題橫幅 -->
+    <div class="pt-24 pb-12 bg-blue-600 text-white text-center">
+        <h1 class="text-4xl md:text-5xl font-black mb-4 tracking-tight">Research Directions</h1>
+        <p class="text-lg md:text-xl text-blue-100 max-w-3xl mx-auto px-4 font-light leading-relaxed">
+            Positioned at the forefront of interdisciplinary research, we are dedicated to achieving breakthrough progress in brain-inspired computing, computer audition, and brain-computer interfaces.
         </p>
     </div>
 
-    <!-- 研究方向主体内容 -->
-    <main class="py-12">
+    <!-- 研究方向主體內容 -->
+    <main class="py-12 flex-grow">
         <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl">
 
-            <!-- 核心研究方向列表 -->
-            <div class="space-y-16 mb-20">
+            <!-- 核心研究方向列表，縮小了卡片間的間距 (改為 space-y-12) -->
+            <div class="space-y-12 mb-20">
 
-                <!-- 方向一：图文混排 (图在左，文在右) -->
-                <div class="flex flex-col md:flex-row bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-lg transition duration-300">
-                    <div class="md:w-5/12">
-                        <img src="https://images.unsplash.com/photo-1559757175-5700dde675bc?auto=format&fit=crop&q=80&w=800" alt="脑电信号采集与分析" class="w-full h-64 md:h-full object-cover">
+                <!-- 方向一：計算機聽覺 -->
+                <div class="flex flex-col md:flex-row bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-xl transition-shadow duration-300">
+                    <!-- 左側配圖：使用 relative 和 absolute 讓圖片完全貼合右側文字高度 -->
+                    <div class="md:w-5/12 relative flex-shrink-0 bg-gray-50">
+                        <img src="fig/bac.png" alt="Audio and Sound Wave Analysis" class="w-full h-64 md:absolute md:inset-0 md:h-full object-cover">
                     </div>
-                    <div class="md:w-7/12 p-8 flex flex-col justify-center">
+                    <!-- 右側文本，稍微縮小了 padding (md:p-10) -->
+                    <div class="md:w-7/12 p-8 md:p-10 flex flex-col justify-center">
                         <div class="flex items-center mb-4">
-                            <i class="fa-solid fa-wave-square text-blue-600 text-2xl mr-3"></i>
-                            <h2 class="text-2xl font-bold text-gray-900">脑电图 (EEG) 与脑机接口 (BCI)</h2>
+                            <i class="fa-solid fa-ear-listen text-blue-600 text-3xl mr-4"></i>
+                            <h2 class="text-3xl font-extrabold text-gray-900 tracking-tight">Brain-inspired Computer Audition</h2>
                         </div>
-                        <p class="text-gray-600 leading-relaxed mb-6">
-                            基于高分辨率的非侵入式脑电信号采集设备，研究在复杂动态环境下的脑信号解码技术。我们特别关注如何利用深度学习算法，实现对抑郁症、焦虑症、疲劳状态等情绪与认知障碍的客观生理指标检测、早期预警与闭环神经干预。
+                        <!-- 縮小行距，改回 leading-relaxed，並縮減底部 margin -->
+                        <p class="text-gray-700 leading-relaxed mb-6 text-justify font-normal text-[15px] md:text-base">
+                            Inspired by the human auditory perception mechanism, our research pioneers advanced computational models for speech and audio signal processing. We are dedicated to extracting robust information representations from complex acoustic environments, driving the evolution of computer audition for applications such as healthcare, emotion recognition, and non-invasive disease detection.
                         </p>
                         <div class="mb-2">
-                            <h4 class="font-bold text-gray-800 text-sm mb-2">核心技术：</h4>
-                            <div class="flex flex-wrap gap-2">
-                                <span class="bg-gray-100 text-gray-700 text-xs px-3 py-1 rounded-full">时空特征提取</span>
-                                <span class="bg-gray-100 text-gray-700 text-xs px-3 py-1 rounded-full">自适应信号去噪</span>
-                                <span class="bg-gray-100 text-gray-700 text-xs px-3 py-1 rounded-full">脑电大模型</span>
+                            <h4 class="font-bold font-heading text-gray-900 text-sm mb-3 uppercase tracking-wider">Core Technologies</h4>
+                            <div class="flex flex-wrap gap-2.5">
+                                <span class="bg-blue-50 text-blue-700 border border-blue-100 text-xs px-3.5 py-1.5 rounded-full font-medium">Audio Representation Learning</span>
+                                <span class="bg-blue-50 text-blue-700 border border-blue-100 text-xs px-3.5 py-1.5 rounded-full font-medium">Disease Detection</span>
+                                <span class="bg-blue-50 text-blue-700 border border-blue-100 text-xs px-3.5 py-1.5 rounded-full font-medium">Affective Computing</span>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- 方向二：图文混排 (文在左，图在右) -->
-                <div class="flex flex-col md:flex-row-reverse bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-lg transition duration-300">
-                    <div class="md:w-5/12">
-                        <img src="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&q=80&w=800" alt="类脑计算架构" class="w-full h-64 md:h-full object-cover">
+                <!-- 方向二：脈衝神經網路 -->
+                <div class="flex flex-col md:flex-row-reverse bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-xl transition-shadow duration-300">
+                    <!-- 右側配圖：使用 relative 和 absolute 讓圖片完全貼合左側文字高度 -->
+                    <div class="md:w-5/12 relative flex-shrink-0 bg-gray-50">
+                        <img src="fig/snn.png" alt="Neural Network Architectures" class="w-full h-64 md:absolute md:inset-0 md:h-full object-cover">
                     </div>
-                    <div class="md:w-7/12 p-8 flex flex-col justify-center">
+                    <!-- 左側文本，稍微縮小了 padding (md:p-10) -->
+                    <div class="md:w-7/12 p-8 md:p-10 flex flex-col justify-center">
                         <div class="flex items-center mb-4">
-                            <i class="fa-solid fa-microchip text-blue-600 text-2xl mr-3"></i>
-                            <h2 class="text-2xl font-bold text-gray-900">脉冲神经网络 (SNNs) 与类脑计算</h2>
+                            <i class="fa-solid fa-network-wired text-blue-600 text-3xl mr-4"></i>
+                            <h2 class="text-3xl font-extrabold text-gray-900 tracking-tight">Spiking Neural Networks (SNNs) & Architectures</h2>
                         </div>
-                        <p class="text-gray-600 leading-relaxed mb-6">
-                            模拟生物神经元高度稀疏、事件驱动的脉冲发放机制，研发具有极低功耗、高计算效率的第三代人工神经网络。我们的研究旨在解决 SNN 的时空信度分配问题，并探索基于神经形态芯片的硬件加速方案，推动人工智能向真正的类脑智能迈进。
+                        <!-- 縮小行距，改回 leading-relaxed，並縮減底部 margin -->
+                        <p class="text-gray-700 leading-relaxed mb-6 text-justify font-normal text-[15px] md:text-base">
+                            Addressing the performance limitations of neuromorphic computing in large-scale tasks, we architect robust and efficient SNN models by integrating spiking dynamics with advanced deep learning primitives. Our research focuses on SNN scaling laws, surrogate gradient optimization, and complex spatial-temporal representation. By bridging the gap between biological inspiration and industrial-grade performance, we empower spiking architectures to excel in real-world vision and language applications with superior energy efficiency.
                         </p>
                         <div class="mb-2">
-                            <h4 class="font-bold text-gray-800 text-sm mb-2">核心技术：</h4>
-                            <div class="flex flex-wrap gap-2">
-                                <span class="bg-gray-100 text-gray-700 text-xs px-3 py-1 rounded-full">替代梯度下降</span>
-                                <span class="bg-gray-100 text-gray-700 text-xs px-3 py-1 rounded-full">突触可塑性 (STDP)</span>
-                                <span class="bg-gray-100 text-gray-700 text-xs px-3 py-1 rounded-full">边缘端部署</span>
+                            <h4 class="font-bold font-heading text-gray-900 text-sm mb-3 uppercase tracking-wider">Core Technologies</h4>
+                            <div class="flex flex-wrap gap-2.5">
+                                <span class="bg-blue-50 text-blue-700 border border-blue-100 text-xs px-3.5 py-1.5 rounded-full font-medium">Surrogate Gradient Descent</span>
+                                <span class="bg-blue-50 text-blue-700 border border-blue-100 text-xs px-3.5 py-1.5 rounded-full font-medium">Model Architecture Design</span>
+                                <span class="bg-blue-50 text-blue-700 border border-blue-100 text-xs px-3.5 py-1.5 rounded-full font-medium">Spatial-Temporal Dynamics</span>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- 方向三：图文混排 (图在左，文在右) -->
-                <div class="flex flex-col md:flex-row bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-lg transition duration-300">
-                    <div class="md:w-5/12">
-                        <img src="https://images.unsplash.com/photo-1576091160550-2173ff9e5ee5?auto=format&fit=crop&q=80&w=800" alt="医疗数据分析" class="w-full h-64 md:h-full object-cover">
+                <!-- 方向三：腦電與腦機介面 -->
+                <div class="flex flex-col md:flex-row bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-xl transition-shadow duration-300">
+                    <!-- 左側配圖：使用 relative 和 absolute 讓圖片完全貼合右側文字高度 -->
+                    <div class="md:w-5/12 relative flex-shrink-0 bg-gray-50">
+                        <img src="fig/eeg.png" alt="EEG Signal Analysis" class="w-full h-64 md:absolute md:inset-0 md:h-full object-cover">
                     </div>
-                    <div class="md:w-7/12 p-8 flex flex-col justify-center">
+                    <!-- 右側文本，稍微縮小了 padding (md:p-10) -->
+                    <div class="md:w-7/12 p-8 md:p-10 flex flex-col justify-center">
                         <div class="flex items-center mb-4">
-                            <i class="fa-solid fa-stethoscope text-blue-600 text-2xl mr-3"></i>
-                            <h2 class="text-2xl font-bold text-gray-900">医学人工智能与辅助诊断</h2>
+                            <i class="fa-solid fa-wave-square text-blue-600 text-3xl mr-4"></i>
+                            <h2 class="text-3xl font-extrabold text-gray-900 tracking-tight">EEG & Brain-Computer Interfaces (BCI)</h2>
                         </div>
-                        <p class="text-gray-600 leading-relaxed mb-6">
-                            利用先进的机器学习和计算机视觉技术，深度挖掘临床医学数据（包含医学影像如 MRI、CT，以及多模态生理信号）的隐含规律。我们致力于开发高鲁棒性、高可解释性的计算机辅助诊断 (CAD) 系统，助力医生进行疾病的精准筛查。
+                        <!-- 縮小行距，改回 leading-relaxed，並縮減底部 margin -->
+                        <p class="text-gray-700 leading-relaxed mb-6 text-justify font-normal text-[15px] md:text-base">
+                            Based on high-resolution, non-invasive electroencephalogram (EEG) acquisition, we investigate brain signal decoding technologies in complex dynamic environments. We are particularly focused on leveraging deep learning algorithms to achieve objective physiological detection, early warning, and closed-loop neural intervention for emotional and cognitive disorders, including depression, anxiety, and fatigue.
                         </p>
                         <div class="mb-2">
-                            <h4 class="font-bold text-gray-800 text-sm mb-2">核心技术：</h4>
-                            <div class="flex flex-wrap gap-2">
-                                <span class="bg-gray-100 text-gray-700 text-xs px-3 py-1 rounded-full">多模态特征融合</span>
-                                <span class="bg-gray-100 text-gray-700 text-xs px-3 py-1 rounded-full">可解释性人工智能 (XAI)</span>
-                                <span class="bg-gray-100 text-gray-700 text-xs px-3 py-1 rounded-full">医学图像分割</span>
+                            <h4 class="font-bold font-heading text-gray-900 text-sm mb-3 uppercase tracking-wider">Core Technologies</h4>
+                            <div class="flex flex-wrap gap-2.5">
+                                <span class="bg-blue-50 text-blue-700 border border-blue-100 text-xs px-3.5 py-1.5 rounded-full font-medium">Spatial-Temporal Feature Extraction</span>
+                                <span class="bg-blue-50 text-blue-700 border border-blue-100 text-xs px-3.5 py-1.5 rounded-full font-medium">Adaptive Denoising</span>
+                                <span class="bg-blue-50 text-blue-700 border border-blue-100 text-xs px-3.5 py-1.5 rounded-full font-medium">EEG Foundation Models</span>
                             </div>
                         </div>
                     </div>
@@ -150,74 +186,79 @@
 
             </div>
 
-            <!-- 承担的科研项目 (Research Projects) -->
-            <section>
-                <div class="text-center mb-10">
-                    <h2 class="text-3xl font-extrabold text-gray-900 inline-block relative">
-                        承担科研项目
-                        <div class="absolute w-1/2 h-1 bg-blue-600 bottom-0 left-1/4 -mb-3 rounded"></div>
+            <!-- 承擔的科研項目 (Research Projects) -->
+            <!--
+            <section class="bg-white rounded-3xl p-8 md:p-12 shadow-sm border border-gray-100">
+                <div class="text-center mb-12">
+                    <h2 class="text-4xl font-black text-gray-900 inline-block relative mb-4 tracking-tight">
+                        Research Projects
+                        <div class="absolute w-1/3 h-1.5 bg-blue-600 bottom-0 left-1/3 -mb-4 rounded-full"></div>
                     </h2>
+                    <p class="text-gray-500 text-sm max-w-2xl mx-auto mt-8 font-light">
+                        * Note: Only <b>student-led</b> projects are displayed here. For the PI's research projects, please visit the <a href="https://eecsqian.com/" target="_blank" class="text-blue-600 hover:text-blue-800 hover:underline font-semibold transition-colors">PI's Personal Homepage</a> and the <a href="https://bhelaborg.wpcomstaging.com/en/" target="_blank" class="text-blue-600 hover:text-blue-800 hover:underline font-semibold transition-colors">BHE Lab Main Website</a>.
+                    </p>
                 </div>
 
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <!-- 项目卡片 1 -->
-                    <div class="bg-white p-6 rounded-xl shadow-sm border border-l-4 border-l-blue-600 hover:shadow-md transition">
-                        <div class="flex justify-between items-start mb-2">
-                            <h4 class="font-bold text-gray-900 text-lg">国家自然科学基金重点项目</h4>
-                            <span class="bg-green-100 text-green-700 text-xs font-bold px-2 py-1 rounded">在研</span>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+
+                    <div class="bg-gray-50 p-8 rounded-2xl border-l-4 border-l-blue-600 hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
+                        <div class="flex flex-wrap justify-between items-start mb-4 gap-2">
+                            <h4 class="font-extrabold text-gray-900 text-xl w-full sm:w-auto">Key Program of NSFC</h4>
+                            <span class="bg-blue-100 text-blue-700 text-xs font-bold px-3 py-1.5 rounded-full shadow-sm">Ongoing</span>
                         </div>
-                        <p class="text-blue-600 text-sm font-medium mb-3">面向多模态脑电信号的类脑智能计算理论与方法</p>
-                        <p class="text-gray-500 text-xs"><i class="fa-regular fa-clock mr-1"></i> 项目周期: 2024.01 - 2027.12</p>
+                        <p class="text-blue-700 text-base font-semibold mb-5 leading-snug">Brain-inspired Intelligent Computing Theories and Methods for Multimodal EEG Signals</p>
+                        <p class="text-gray-500 text-sm font-medium"><i class="fa-regular fa-calendar-days mr-2 text-gray-400"></i>Duration: 2024.01 - 2027.12</p>
                     </div>
 
-                    <!-- 项目卡片 2 -->
-                    <div class="bg-white p-6 rounded-xl shadow-sm border border-l-4 border-l-blue-600 hover:shadow-md transition">
-                        <div class="flex justify-between items-start mb-2">
-                            <h4 class="font-bold text-gray-900 text-lg">国家自然科学基金青年项目</h4>
-                            <span class="bg-green-100 text-green-700 text-xs font-bold px-2 py-1 rounded">在研</span>
+
+                    <div class="bg-gray-50 p-8 rounded-2xl border-l-4 border-l-emerald-500 hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
+                        <div class="flex flex-wrap justify-between items-start mb-4 gap-2">
+                            <h4 class="font-extrabold text-gray-900 text-xl w-full sm:w-auto">Young Scientists Fund of NSFC</h4>
+                            <span class="bg-emerald-100 text-emerald-700 text-xs font-bold px-3 py-1.5 rounded-full shadow-sm">Under Review</span>
                         </div>
-                        <p class="text-blue-600 text-sm font-medium mb-3">基于脉冲神经网络的时空特征提取及其在情感识别中的应用</p>
-                        <p class="text-gray-500 text-xs"><i class="fa-regular fa-clock mr-1"></i> 项目周期: 2023.01 - 2025.12</p>
+                        <p class="text-emerald-700 text-base font-semibold mb-5 leading-snug">Spatial-Temporal Feature Extraction based on Spiking Neural Networks and its Application in Emotion Recognition</p>
+                        <p class="text-gray-500 text-sm font-medium"><i class="fa-solid fa-spinner mr-2 text-gray-400"></i>Status: Application submitted</p>
                     </div>
 
-                    <!-- 项目卡片 3 -->
-                    <div class="bg-white p-6 rounded-xl shadow-sm border border-l-4 border-l-gray-400 hover:shadow-md transition opacity-80">
-                        <div class="flex justify-between items-start mb-2">
-                            <h4 class="font-bold text-gray-900 text-lg">省部级重点研发计划</h4>
-                            <span class="bg-gray-200 text-gray-700 text-xs font-bold px-2 py-1 rounded">已结题</span>
+
+                    <div class="bg-gray-50 p-8 rounded-2xl border-l-4 border-l-gray-400 hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 opacity-75 hover:opacity-100">
+                        <div class="flex flex-wrap justify-between items-start mb-4 gap-2">
+                            <h4 class="font-extrabold text-gray-900 text-xl w-full sm:w-auto">Provincial Key R&D Program</h4>
+                            <span class="bg-gray-200 text-gray-700 text-xs font-bold px-3 py-1.5 rounded-full shadow-sm">Completed</span>
                         </div>
-                        <p class="text-gray-600 text-sm font-medium mb-3">抑郁症早期筛查的智能辅助诊断系统研发</p>
-                        <p class="text-gray-500 text-xs"><i class="fa-regular fa-clock mr-1"></i> 项目周期: 2020.01 - 2022.12</p>
+                        <p class="text-gray-700 text-base font-semibold mb-5 leading-snug">Development of Intelligent Computer-Aided Diagnosis System for Early Screening of Depression</p>
+                        <p class="text-gray-500 text-sm font-medium"><i class="fa-regular fa-calendar-check mr-2 text-gray-400"></i>Duration: 2020.01 - 2022.12</p>
                     </div>
                 </div>
-            </section>
+            </section>-->
 
         </div>
     </main>
 
-    <!-- 加入我们 CTA -->
-    <section class="py-12 bg-blue-50 mt-12">
+    <!-- 加入我們 CTA -->
+    <section class="py-16 bg-gradient-to-r from-blue-50 to-indigo-50 border-t border-blue-100">
         <div class="container mx-auto px-4 text-center">
-            <h3 class="text-2xl font-bold text-gray-900 mb-4">对我们的研究感兴趣？</h3>
-            <p class="text-gray-600 mb-6 max-w-2xl mx-auto">我们期待具有探索精神的你加入团队，一起在人工智能与脑科学的交叉领域创造更多可能。</p>
-            <a href="contact.html" class="inline-block bg-blue-600 text-white px-8 py-3 rounded-md font-bold hover:bg-blue-700 transition shadow-md">加入实验室</a>
+            <h3 class="text-3xl font-extrabold text-gray-900 mb-6 tracking-tight">Interested in Our Research?</h3>
+            <p class="text-gray-700 mb-8 max-w-2xl mx-auto text-lg font-light leading-relaxed">We are looking for inquisitive minds to join our team and collectively unlock new possibilities at the intersection of Artificial Intelligence and Brain Science.</p>
+            <a href="contact.html" class="inline-flex items-center bg-blue-600 text-white px-8 py-3.5 rounded-lg font-bold hover:bg-blue-700 transition-all duration-300 shadow-md hover:shadow-xl transform hover:-translate-y-0.5">
+                Join Us <i class="fa-solid fa-arrow-right ml-2"></i>
+            </a>
         </div>
     </section>
 
-    <!-- 页脚 (与主页保持一致) -->
-    <footer class="bg-gray-900 text-gray-400 py-8">
+    <!-- 頁腳 -->
+    <footer class="bg-gray-900 text-gray-400 py-10">
         <div class="container mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center text-sm">
-            <div class="mb-4 md:mb-0">
+            <div class="mb-4 md:mb-0 font-medium">
                 &copy; 2026 BHE-AIM-BAC Lab. All rights reserved.
             </div>
-            <div class="flex space-x-4">
-                <a href="#" class="hover:text-white transition"><i class="fa-brands fa-github text-xl"></i></a>
-                <a href="#" class="hover:text-white transition"><i class="fa-brands fa-twitter text-xl"></i></a>
+            <div class="flex space-x-6">
+                <!-- 保留供以後使用的社交圖示插槽 -->
             </div>
         </div>
     </footer>
 
-    <!-- JavaScript 用于移动端菜单交互 -->
+    <!-- 行動端選單交互腳本 -->
     <script>
         const btn = document.getElementById('mobile-menu-btn');
         const menu = document.getElementById('mobile-menu');

@@ -5,16 +5,45 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Us - BHE-AIM-BAC</title>
 
+    <!-- 引入 Google Fonts: Inter 与 Roboto -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- 引入 Inter (标题用) 与 Roboto (内文用) -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+
     <!-- 網站圖示 -->
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🧠</text></svg>">
 
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- 配置 Tailwind 的字体家族 -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Roboto"', 'sans-serif'],
+                        heading: ['"Inter"', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
     <!-- FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
+        /* 添加平滑滚动效果 */
         html {
             scroll-behavior: smooth;
+        }
+        /* 强制套用 Roboto 到所有正文、段落和标签 */
+        body, p, a, span, li, div {
+            font-family: 'Roboto', sans-serif !important;
+        }
+        /* 强制将所有标题设定为 Inter 字体，并稍微收紧字距增加现代感 */
+        h1, h2, h3, h4, h5, h6, .font-heading {
+            font-family: 'Inter', sans-serif !important;
+            letter-spacing: -0.015em;
         }
     </style>
 </head>
@@ -27,15 +56,15 @@
                 <!-- 實驗室標誌 / 名稱 -->
                 <div class="flex-shrink-0 flex items-center">
                     <i class="fa-solid fa-brain text-blue-600 text-2xl mr-2"></i>
-                    <a href="index.html" class="text-xl font-bold text-gray-900">BHE-AIM-BAC</a>
+                    <a href="index.html" class="text-xl font-bold font-heading text-gray-900">BHE-AIM-BAC</a>
                 </div>
 
                 <!-- 桌面端選單 -->
                 <nav class="hidden md:flex space-x-8">
-                    <a href="index.html" class="text-gray-600 hover:text-blue-600 transition duration-300">Home</a>
-                    <a href="research.html" class="text-gray-600 hover:text-blue-600 transition duration-300">Research</a>
-                    <a href="publications.html" class="text-gray-600 hover:text-blue-600 transition duration-300">Publications</a>
-                    <a href="team.html" class="text-gray-600 hover:text-blue-600 transition duration-300">Team</a>
+                    <a href="index.html" class="text-gray-600 hover:text-blue-600 transition duration-300 font-medium">Home</a>
+                    <a href="research.html" class="text-gray-600 hover:text-blue-600 transition duration-300 font-medium">Research</a>
+                    <a href="publications.html" class="text-gray-600 hover:text-blue-600 transition duration-300 font-medium">Publications</a>
+                    <a href="team.html" class="text-gray-600 hover:text-blue-600 transition duration-300 font-medium">Team</a>
                     <a href="contact.html" class="text-blue-600 font-bold border-b-2 border-blue-600 pb-1">Contact us</a>
                 </nav>
 
@@ -51,10 +80,10 @@
         <!-- 行動端下拉選單 -->
         <div id="mobile-menu" class="hidden md:hidden bg-white border-t">
             <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-                <a href="index.html" class="block px-3 py-2 text-gray-600 hover:text-blue-600 hover:bg-gray-50 rounded-md">Home</a>
-                <a href="research.html" class="block px-3 py-2 text-gray-600 hover:text-blue-600 hover:bg-gray-50 rounded-md">Research</a>
-                <a href="publications.html" class="block px-3 py-2 text-gray-600 hover:text-blue-600 hover:bg-gray-50 rounded-md">Publications</a>
-                <a href="team.html" class="block px-3 py-2 text-gray-600 hover:text-blue-600 hover:bg-gray-50 rounded-md">Team</a>
+                <a href="index.html" class="block px-3 py-2 text-gray-600 hover:text-blue-600 hover:bg-gray-50 rounded-md font-medium">Home</a>
+                <a href="research.html" class="block px-3 py-2 text-gray-600 hover:text-blue-600 hover:bg-gray-50 rounded-md font-medium">Research</a>
+                <a href="publications.html" class="block px-3 py-2 text-gray-600 hover:text-blue-600 hover:bg-gray-50 rounded-md font-medium">Publications</a>
+                <a href="team.html" class="block px-3 py-2 text-gray-600 hover:text-blue-600 hover:bg-gray-50 rounded-md font-medium">Team</a>
                 <a href="contact.html" class="block px-3 py-2 text-blue-600 bg-blue-50 font-bold rounded-md">Contact us</a>
             </div>
         </div>
@@ -64,8 +93,8 @@
     <main class="pt-32 pb-12 flex-grow flex items-center justify-center">
         <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl">
             <div class="bg-white p-8 md:p-12 rounded-2xl shadow-sm border border-gray-100 text-center">
-                <h1 class="text-3xl md:text-4xl font-extrabold text-gray-900 mb-6">Get in Touch</h1>
-                <p class="text-gray-600 mb-10 max-w-xl mx-auto">
+                <h1 class="text-3xl md:text-4xl font-extrabold text-gray-900 mb-6 font-heading tracking-tight">Get in Touch</h1>
+                <p class="text-gray-600 mb-10 max-w-xl mx-auto leading-relaxed">
                     We are always looking for passionate students and researchers to join us. Please feel free to reach out to us using the contact information below.
                 </p>
 
@@ -76,39 +105,37 @@
                             <i class="fa-solid fa-location-dot text-blue-600 text-xl w-6 text-center"></i>
                         </div>
                         <div>
-                            <h3 class="font-bold text-gray-900 text-lg mb-1">Address</h3>
-                            <p class="text-gray-600 leading-relaxed">
+                            <h3 class="font-bold font-heading text-gray-900 text-lg mb-1">Address</h3>
+                            <p class="text-gray-600 leading-relaxed mb-1">
                                 Floor 4, New Canteen (新食堂), Beijing Institute of Technology, <b>Beijing</b>, China.
                             </p>
-
                             <p class="text-gray-600 leading-relaxed">
                                 Room TC211, Tianyou (天佑) Building, Beijing Institute of Technology, <b>Zhuhai</b>, China.
                             </p>
-
                         </div>
                     </div>
 
-                    <!-- 電子信箱 -->
-                    <div class="flex items-start">
+                    <!-- 電子信箱 1 -->
+                    <div class="flex items-center">
                         <div class="bg-blue-50 p-3 rounded-full mr-4 flex-shrink-0">
                             <i class="fa-solid fa-envelope text-blue-600 text-xl w-6 text-center"></i>
                         </div>
                         <div>
-                            <h3 class="font-bold text-gray-900 text-lg mb-1">Email 1</h3>
-                            <a href="mailto:ibcc-lab@university.edu.cn" class="text-blue-600 hover:underline hover:text-blue-800 transition">
+                            <h3 class="font-bold font-heading text-gray-900 text-lg mb-1">Email 1</h3>
+                            <a href="mailto:wangrui59@bit.edu.cn" class="text-blue-600 hover:underline hover:text-blue-800 transition font-medium">
                                 wangrui59@bit.edu.cn
                             </a>
                         </div>
                     </div>
 
-                    <!-- 電話 (可選) -->
-                    <div class="flex items-start">
+                    <!-- 電子信箱 2 -->
+                    <div class="flex items-center">
                         <div class="bg-blue-50 p-3 rounded-full mr-4 flex-shrink-0">
                             <i class="fa-solid fa-envelope text-blue-600 text-xl w-6 text-center"></i>
                         </div>
                         <div>
-                            <h3 class="font-bold text-gray-900 text-lg mb-1">Email 2</h3>
-                            <a href="mailto:ibcc-lab@university.edu.cn" class="text-blue-600 hover:underline hover:text-blue-800 transition">
+                            <h3 class="font-bold font-heading text-gray-900 text-lg mb-1">Email 2</h3>
+                            <a href="mailto:qian@bit.edu.cn" class="text-blue-600 hover:underline hover:text-blue-800 transition font-medium">
                                 qian@bit.edu.cn
                             </a>
                         </div>
@@ -121,12 +148,12 @@
     <!-- 頁腳 -->
     <footer class="bg-gray-900 text-gray-400 py-8 mt-auto">
         <div class="container mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center text-sm">
-            <div class="mb-4 md:mb-0">
+            <div class="mb-4 md:mb-0 font-medium">
                 &copy; 2026 BHE-AIM-BAC Lab. All rights reserved.
             </div>
             <div class="flex space-x-4">
-                <a href="#" class="hover:text-white transition"><i class="fa-brands fa-github text-xl"></i></a>
-                <a href="#" class="hover:text-white transition"><i class="fa-brands fa-twitter text-xl"></i></a>
+                <!--<a href="#" class="hover:text-white transition"><i class="fa-brands fa-github text-xl"></i></a>-->
+                <!--<a href="#" class="hover:text-white transition"><i class="fa-brands fa-twitter text-xl"></i></a>-->
             </div>
         </div>
     </footer>

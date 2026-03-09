@@ -5,16 +5,44 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Publications - BHE-AIM-BAC</title>
     
+    <!-- 引入 Google Fonts: Inter 与 Roboto -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- 引入 Inter (标题用) 与 Roboto (内文用) -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+
     <!-- Favicon -->
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🧠</text></svg>">
 
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- 配置 Tailwind 的字体家族 -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Roboto"', 'sans-serif'],
+                        heading: ['"Inter"', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
     <!-- FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         html {
             scroll-behavior: smooth;
+        }
+        /* 强制套用 Roboto 到所有正文、段落和标签 */
+        body, p, a, span, li, div {
+            font-family: 'Roboto', sans-serif !important;
+        }
+        /* 强制将所有标题设定为 Inter 字体，并稍微收紧字距增加现代感 */
+        h1, h2, h3, h4, h5, h6, .font-heading {
+            font-family: 'Inter', sans-serif !important;
+            letter-spacing: -0.015em;
         }
         /* 修改為 10 行後才顯示省略號 */
         .line-clamp-10 {
@@ -34,16 +62,16 @@
                 <!-- 實驗室標誌 / 名稱 -->
                 <div class="flex-shrink-0 flex items-center">
                     <i class="fa-solid fa-brain text-blue-600 text-2xl mr-2"></i>
-                    <a href="index.html" class="text-xl font-bold text-gray-900">BHE-AIM-BAC</a>
+                    <a href="index.html" class="text-xl font-bold font-heading text-gray-900">BHE-AIM-BAC</a>
                 </div>
 
                 <!-- 桌面端選單 -->
                 <nav class="hidden md:flex space-x-8">
-                    <a href="index.html" class="text-gray-600 hover:text-blue-600 transition duration-300">Home</a>
-                    <a href="research.html" class="text-gray-600 hover:text-blue-600 transition duration-300">Research</a>
+                    <a href="index.html" class="text-gray-600 hover:text-blue-600 transition duration-300 font-medium">Home</a>
+                    <a href="research.html" class="text-gray-600 hover:text-blue-600 transition duration-300 font-medium">Research</a>
                     <a href="publications.html" class="text-blue-600 font-bold border-b-2 border-blue-600 pb-1">Publications</a>
-                    <a href="team.html" class="text-gray-600 hover:text-blue-600 transition duration-300">Team</a>
-                    <a href="contact.html" class="text-gray-600 hover:text-blue-600 transition duration-300">Contact us</a>
+                    <a href="team.html" class="text-gray-600 hover:text-blue-600 transition duration-300 font-medium">Team</a>
+                    <a href="contact.html" class="text-gray-600 hover:text-blue-600 transition duration-300 font-medium">Contact us</a>
                 </nav>
 
                 <!-- 行動端選單按鈕 -->
@@ -58,19 +86,19 @@
         <!-- 行動端下拉選單 -->
         <div id="mobile-menu" class="hidden md:hidden bg-white border-t">
             <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-                <a href="index.html" class="block px-3 py-2 text-gray-600 hover:text-blue-600 hover:bg-gray-50 rounded-md">Home</a>
-                <a href="research.html" class="block px-3 py-2 text-gray-600 hover:text-blue-600 hover:bg-gray-50 rounded-md">Research</a>
+                <a href="index.html" class="block px-3 py-2 text-gray-600 hover:text-blue-600 hover:bg-gray-50 rounded-md font-medium">Home</a>
+                <a href="research.html" class="block px-3 py-2 text-gray-600 hover:text-blue-600 hover:bg-gray-50 rounded-md font-medium">Research</a>
                 <a href="publications.html" class="block px-3 py-2 text-blue-600 bg-blue-50 font-bold rounded-md">Publications</a>
-                <a href="team.html" class="block px-3 py-2 text-gray-600 hover:text-blue-600 hover:bg-gray-50 rounded-md">Team</a>
-                <a href="contact.html" class="block px-3 py-2 text-gray-600 hover:text-blue-600 hover:bg-gray-50 rounded-md">Contact us</a>
+                <a href="team.html" class="block px-3 py-2 text-gray-600 hover:text-blue-600 hover:bg-gray-50 rounded-md font-medium">Team</a>
+                <a href="contact.html" class="block px-3 py-2 text-gray-600 hover:text-blue-600 hover:bg-gray-50 rounded-md font-medium">Contact us</a>
             </div>
         </div>
     </header>
 
     <!-- 頁面標題橫幅 -->
     <div class="pt-24 pb-10 bg-blue-600 text-white text-center">
-        <h1 class="text-4xl font-extrabold mb-4">Publications</h1>
-        <p class="text-lg text-blue-100 max-w-2xl mx-auto px-4">
+        <h1 class="text-4xl font-extrabold mb-4 font-heading tracking-tight">Publications</h1>
+        <p class="text-lg text-blue-100 max-w-2xl mx-auto px-4 font-light leading-relaxed">
             Discover our latest academic contributions and research findings in brain-computer interfaces, brain-inspired computing, and medical AI.
         </p>
     </div>
@@ -81,19 +109,19 @@
 
             <!-- 2026 年論文 -->
             <section class="mb-16">
-                <h2 class="text-2xl font-bold text-gray-900 mb-8 border-l-4 border-blue-600 pl-4">2026</h2>
+                <h2 class="text-2xl font-bold text-gray-900 mb-8 border-l-4 border-blue-600 pl-4 font-heading">2026</h2>
                 <div class="space-y-8">
 
                     <!-- 論文卡片 1 (2026) -->
                     <div class="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-lg transition-shadow duration-300 flex flex-col md:flex-row">
                         <!-- 左側：插圖摘要 -->
                         <div class="md:w-1/3 bg-gray-50 flex-shrink-0 p-4 flex items-center justify-center border-b md:border-b-0 md:border-r border-gray-100">
-                            <img src="https://images.unsplash.com/photo-1530497610245-94d3c16cda28?auto=format&fit=crop&q=80&w=600" alt="Graphical Abstract" class="max-h-48 md:max-h-full object-contain rounded">
+                            <img src="paper/EEAI_ty_2026.png" alt="Graphical Abstract" class="max-h-48 md:max-h-full object-contain rounded">
                         </div>
 
                         <!-- 右側：論文詳情 -->
                         <div class="md:w-2/3 p-6 md:p-8 flex flex-col justify-center">
-                            <h3 class="text-xl font-bold text-gray-900 mb-3 hover:text-blue-600 transition-colors">
+                            <h3 class="text-xl font-bold text-gray-900 mb-3 hover:text-blue-600 transition-colors font-heading">
                                 <a href="https://www.sciencedirect.com/science/article/abs/pii/S0952197625031963" target="_blank">
                                     BBANet: Bilateral biological auditory-inspired neural network for heart sound classification
                                 </a>
@@ -130,19 +158,19 @@
 
             <!-- 2025 年論文 -->
             <section class="mb-16">
-                <h2 class="text-2xl font-bold text-gray-900 mb-8 border-l-4 border-blue-600 pl-4">2025</h2>
+                <h2 class="text-2xl font-bold text-gray-900 mb-8 border-l-4 border-blue-600 pl-4 font-heading">2025</h2>
                 <div class="space-y-8">
 
                     <!-- 論文卡片 2 (2025) -->
                     <div class="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-lg transition-shadow duration-300 flex flex-col md:flex-row">
                         <!-- 左側：插圖摘要 -->
                         <div class="md:w-1/3 bg-gray-50 flex-shrink-0 p-4 flex items-center justify-center border-b md:border-b-0 md:border-r border-gray-100">
-                            <img src="https://images.unsplash.com/photo-1559757175-5700dde675bc?auto=format&fit=crop&q=80&w=600" alt="Graphical Abstract" class="max-h-48 md:max-h-full object-contain rounded">
+                            <img src="paper/JBHI_wzh_2025.png" alt="Graphical Abstract" class="max-h-48 md:max-h-full object-contain rounded">
                         </div>
 
                         <!-- 右側：論文詳情 -->
                         <div class="md:w-2/3 p-6 md:p-8 flex flex-col justify-center">
-                            <h3 class="text-xl font-bold text-gray-900 mb-3 hover:text-blue-600 transition-colors">
+                            <h3 class="text-xl font-bold text-gray-900 mb-3 hover:text-blue-600 transition-colors font-heading">
                                 <a href="https://ieeexplore.ieee.org/abstract/document/11271376" target="_blank">
                                     Can Information Representations Inspired by the Human Auditory Perception Benefit Computer Audition-based Disease Detection? An Interpretable Comparative Study
                                 </a>
